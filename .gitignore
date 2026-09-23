@@ -1,0 +1,34 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Xcode Project
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/Pods/
+
+# App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Temp files
+*.tmp
+*~

@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00235BD470B58BD9CE47E6DF /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4BBD99D2BFB642AC5842C /* SampleData.swift */; };
+		16612D6F575980AF56B21460 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556EC444A3F70805D3ACCA85 /* MainTabView.swift */; };
+		1B68B921DFEABAB8ECEAF961 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E932128D465230F37535A090 /* AudioPlayerService.swift */; };
+		221B39A21EE93251C1F6D685 /* VisualizerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B883325C5D2BAC454C5402B /* VisualizerBarView.swift */; };
+		2F2961905BB0A935E825426F /* FloatingCapsuleMiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */; };
+		2F319A4AEA23332ABDFF4363 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED7922E3DFC655189F783E /* HapticFeedback.swift */; };
+		331C0B51FB71F4B98CEEB8C6 /* WebDAVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FE43C4ADA2747B780B3E0 /* WebDAVClient.swift */; };
+		44116FEFB8B7E7F64ACDC972 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C3F76478CFF051ED2514E /* GlassCard.swift */; };
+		47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88E2C4B234E0770CF42D968 /* Assets.xcassets */; };
+		68D0C5C025E6F46F68D7597C /* FluidMeshBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */; };
+		81D6E40C02E0C463AB3E4B30 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AACE341CA2F9FD621EF200 /* ExploreView.swift */; };
+		91FB2A5411BD4BE9567D8B3C /* NowPlayingUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2204EF9EE7E385147000D3 /* NowPlayingUpdater.swift */; };
+		972FF543FCDFF335858E7FE7 /* JiZhiMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */; };
+		98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */; };
+		9CB0CE0F667F6242CF7828F6 /* WaveformScrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C20829429611A1A872BC /* WaveformScrubber.swift */; };
+		A372765A778C20393ED114DB /* CloudVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41F239690D2AE53919FA52 /* CloudVaultView.swift */; };
+		A702613E258518B40652FBF3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EA511F992AA7EC0D6B315C /* Track.swift */; };
+		A9F0B291762C6288D580BE3D /* LocalVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20900A6C60D22A8F76767592 /* LocalVaultView.swift */; };
+		AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */; };
+		B1728CA566D759DB2449E5DF /* MediaLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */; };
+		C589AD9AE755B2E2B77DFE88 /* ImmersiveNowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */; };
+		DA0A4C8C82322FDAA6189725 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71A8D04C489AC47F2478E1 /* SettingsView.swift */; };
+		DFE3CFCC3572AF92B31AEDEB /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EB59D0FD5C09F1E139C56 /* Album.swift */; };
+		F130980139CEA215A116E5FA /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20900A6C60D22A8F76767592 /* LocalVaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultView.swift; sourceTree = "<group>"; };
+		434EB59D0FD5C09F1E139C56 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		4F4FE43C4ADA2747B780B3E0 /* WebDAVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDAVClient.swift; sourceTree = "<group>"; };
+		4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRowView.swift; sourceTree = "<group>"; };
+		51414CA456167F793B4B1BB1 /* JiZhiMusic.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = JiZhiMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		556EC444A3F70805D3ACCA85 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
+		5B883325C5D2BAC454C5402B /* VisualizerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerBarView.swift; sourceTree = "<group>"; };
+		5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiZhiMusicApp.swift; sourceTree = "<group>"; };
+		6A71A8D04C489AC47F2478E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6E2204EF9EE7E385147000D3 /* NowPlayingUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUpdater.swift; sourceTree = "<group>"; };
+		6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryManager.swift; sourceTree = "<group>"; };
+		82ED7922E3DFC655189F783E /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidMeshBackground.swift; sourceTree = "<group>"; };
+		8DD4BBD99D2BFB642AC5842C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		963C3F76478CFF051ED2514E /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		99EA511F992AA7EC0D6B315C /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		A10A84D385D634BCEB3DD8F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC41F239690D2AE53919FA52 /* CloudVaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudVaultView.swift; sourceTree = "<group>"; };
+		AEE896554B611205122F2968 /* JiZhiMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JiZhiMusic.entitlements; sourceTree = "<group>"; };
+		B3D6C20829429611A1A872BC /* WaveformScrubber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformScrubber.swift; sourceTree = "<group>"; };
+		C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveNowPlayingView.swift; sourceTree = "<group>"; };
+		CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayTemplateManager.swift; sourceTree = "<group>"; };
+		E88E2C4B234E0770CF42D968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E932128D465230F37535A090 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCapsuleMiniPlayer.swift; sourceTree = "<group>"; };
+		F3AACE341CA2F9FD621EF200 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0E408C141A7921FC9F65963C /* NowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */,
+			);
+			path = NowPlaying;
+			sourceTree = "<group>";
+		};
+		3FDE868E4F8E07543D31E616 = {
+			isa = PBXGroup;
+			children = (
+				A0F6F704049AEE6EBEBC397B /* JiZhiMusic */,
+				6A1FA386C1E0F14B34B23C38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A98EA335CA720D1E66DEF3B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */,
+				A10A84D385D634BCEB3DD8F4 /* Info.plist */,
+				AEE896554B611205122F2968 /* JiZhiMusic.entitlements */,
+				5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		605861E50B5653A27791B045 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				556EC444A3F70805D3ACCA85 /* MainTabView.swift */,
+				99A861A104548D96B3106FA3 /* Explore */,
+				D885AB6597106E8CFDFE3554 /* Library */,
+				0E408C141A7921FC9F65963C /* NowPlaying */,
+				772E113071EDC3AD3B97E48E /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		672FFEBDAF54A15247D69AB8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				829296C872E5B2A3B7C67B31 /* CarPlay */,
+				6C42AC8AF6817157AD89A026 /* Components */,
+				7E7B5FC5A530150112D886C3 /* DesignSystem */,
+				605861E50B5653A27791B045 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6A1FA386C1E0F14B34B23C38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51414CA456167F793B4B1BB1 /* JiZhiMusic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C42AC8AF6817157AD89A026 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */,
+				4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */,
+				5B883325C5D2BAC454C5402B /* VisualizerBarView.swift */,
+				B3D6C20829429611A1A872BC /* WaveformScrubber.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		772E113071EDC3AD3B97E48E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6A71A8D04C489AC47F2478E1 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7E7B5FC5A530150112D886C3 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */,
+				963C3F76478CFF051ED2514E /* GlassCard.swift */,
+				82ED7922E3DFC655189F783E /* HapticFeedback.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		829296C872E5B2A3B7C67B31 /* CarPlay */ = {
+			isa = PBXGroup;
+			children = (
+				CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */,
+			);
+			path = CarPlay;
+			sourceTree = "<group>";
+		};
+		99A861A104548D96B3106FA3 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				F3AACE341CA2F9FD621EF200 /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		A0F6F704049AEE6EBEBC397B /* JiZhiMusic */ = {
+			isa = PBXGroup;
+			children = (
+				4A98EA335CA720D1E66DEF3B /* App */,
+				ACBA987B4F5E901EE7913DD8 /* Core */,
+				FCC8876DC7AB1398A8E0F067 /* Resources */,
+				672FFEBDAF54A15247D69AB8 /* UI */,
+			);
+			path = JiZhiMusic;
+			sourceTree = "<group>";
+		};
+		ACBA987B4F5E901EE7913DD8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E5C47381BF8FEDA2F0D96B58 /* AudioEngine */,
+				F0B6FEDC22A784EC23F8FBF6 /* Models */,
+				CD908101BA12CC57E8311F6B /* Storage */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CD908101BA12CC57E8311F6B /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */,
+				4F4FE43C4ADA2747B780B3E0 /* WebDAVClient.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D885AB6597106E8CFDFE3554 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AC41F239690D2AE53919FA52 /* CloudVaultView.swift */,
+				20900A6C60D22A8F76767592 /* LocalVaultView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E5C47381BF8FEDA2F0D96B58 /* AudioEngine */ = {
+			isa = PBXGroup;
+			children = (
+				E932128D465230F37535A090 /* AudioPlayerService.swift */,
+				6E2204EF9EE7E385147000D3 /* NowPlayingUpdater.swift */,
+			);
+			path = AudioEngine;
+			sourceTree = "<group>";
+		};
+		F0B6FEDC22A784EC23F8FBF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				434EB59D0FD5C09F1E139C56 /* Album.swift */,
+				8DD4BBD99D2BFB642AC5842C /* SampleData.swift */,
+				99EA511F992AA7EC0D6B315C /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCC8876DC7AB1398A8E0F067 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E88E2C4B234E0770CF42D968 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6510ACB80E38C064305D19D4 /* JiZhiMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3B35A59F87DDD7D936B4CE7 /* Build configuration list for PBXNativeTarget "JiZhiMusic" */;
+			buildPhases = (
+				1FAFBCE66B1E9828004F8706 /* Sources */,
+				F51E89E66395B1B6D8E852FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JiZhiMusic;
+			packageProductDependencies = (
+			);
+			productName = JiZhiMusic;
+			productReference = 51414CA456167F793B4B1BB1 /* JiZhiMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		001B14CCB8A7B7C2F1CA2D9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					6510ACB80E38C064305D19D4 = {
+						DevelopmentTeam = PLH99FA6GF;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0483EB01A7F15EC7B3B34942 /* Build configuration list for PBXProject "JiZhiMusic" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 3FDE868E4F8E07543D31E616;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6A1FA386C1E0F14B34B23C38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6510ACB80E38C064305D19D4 /* JiZhiMusic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F51E89E66395B1B6D8E852FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FAFBCE66B1E9828004F8706 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE3CFCC3572AF92B31AEDEB /* Album.swift in Sources */,
+				1B68B921DFEABAB8ECEAF961 /* AudioPlayerService.swift in Sources */,
+				F130980139CEA215A116E5FA /* CarPlaySceneDelegate.swift in Sources */,
+				AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */,
+				A372765A778C20393ED114DB /* CloudVaultView.swift in Sources */,
+				81D6E40C02E0C463AB3E4B30 /* ExploreView.swift in Sources */,
+				2F2961905BB0A935E825426F /* FloatingCapsuleMiniPlayer.swift in Sources */,
+				68D0C5C025E6F46F68D7597C /* FluidMeshBackground.swift in Sources */,
+				44116FEFB8B7E7F64ACDC972 /* GlassCard.swift in Sources */,
+				2F319A4AEA23332ABDFF4363 /* HapticFeedback.swift in Sources */,
+				C589AD9AE755B2E2B77DFE88 /* ImmersiveNowPlayingView.swift in Sources */,
+				972FF543FCDFF335858E7FE7 /* JiZhiMusicApp.swift in Sources */,
+				A9F0B291762C6288D580BE3D /* LocalVaultView.swift in Sources */,
+				16612D6F575980AF56B21460 /* MainTabView.swift in Sources */,
+				B1728CA566D759DB2449E5DF /* MediaLibraryManager.swift in Sources */,
+				91FB2A5411BD4BE9567D8B3C /* NowPlayingUpdater.swift in Sources */,
+				00235BD470B58BD9CE47E6DF /* SampleData.swift in Sources */,
+				DA0A4C8C82322FDAA6189725 /* SettingsView.swift in Sources */,
+				A702613E258518B40652FBF3 /* Track.swift in Sources */,
+				98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */,
+				221B39A21EE93251C1F6D685 /* VisualizerBarView.swift in Sources */,
+				9CB0CE0F667F6242CF7828F6 /* WaveformScrubber.swift in Sources */,
+				331C0B51FB71F4B98CEEB8C6 /* WebDAVClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1EC1353F725CBBD16AC76224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JiZhiMusic/App/JiZhiMusic.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = JiZhiMusic/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenpingan.JiZhiMusic;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5854EBB613B0390C9B41A2E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JiZhiMusic/App/JiZhiMusic.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = JiZhiMusic/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenpingan.JiZhiMusic;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59E9E5C7B8E709E22160C3D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = PLH99FA6GF;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = JiZhiMusic;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		BB29E03E423F94413801BA89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = PLH99FA6GF;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = JiZhiMusic;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0483EB01A7F15EC7B3B34942 /* Build configuration list for PBXProject "JiZhiMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59E9E5C7B8E709E22160C3D3 /* Debug */,
+				BB29E03E423F94413801BA89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A3B35A59F87DDD7D936B4CE7 /* Build configuration list for PBXNativeTarget "JiZhiMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5854EBB613B0390C9B41A2E3 /* Debug */,
+				1EC1353F725CBBD16AC76224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 001B14CCB8A7B7C2F1CA2D9E /* Project object */;
+}

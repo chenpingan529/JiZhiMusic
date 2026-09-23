@@ -1,0 +1,33 @@
+name: JiZhiMusic
+options:
+  bundleIdPrefix: com.chenpingan
+  deploymentTarget:
+    iOS: "18.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: "PLH99FA6GF"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+    GENERATE_INFOPLIST_FILE: false
+    PRODUCT_NAME: "JiZhiMusic"
+    SWIFT_STRICT_CONCURRENCY: minimal
+targets:
+  JiZhiMusic:
+    type: application
+    platform: iOS
+    sources:
+      - path: JiZhiMusic
+    info:
+      path: JiZhiMusic/App/Info.plist
+    entitlements:
+      path: JiZhiMusic/App/JiZhiMusic.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.chenpingan.JiZhiMusic
+        INFOPLIST_FILE: JiZhiMusic/App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: JiZhiMusic/App/JiZhiMusic.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
