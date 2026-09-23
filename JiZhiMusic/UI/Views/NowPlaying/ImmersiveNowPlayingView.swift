@@ -139,18 +139,55 @@ public struct ImmersiveNowPlayingView: View {
         }
     }
 
-    // MARK: - 3D 浮动英雄封面
+    // MARK: - 3D 浮动实体黑胶与封套
     private var heroArtworkView: some View {
-        VStack {
+        ZStack {
             if let track = player.currentTrack {
+                // 1. 半探出黑胶唱片 (Half-Ejected Vinyl Disc)
+                ZStack {
+                    Circle()
+                        .fill(
+                            RadialGradient(
+                                colors: [Color(red: 0.15, green: 0.15, blue: 0.18), Color(red: 0.05, green: 0.05, blue: 0.07)],
+                                center: .center,
+                                startRadius: 20,
+                                endRadius: 100
+                            )
+                        )
+                        .overlay {
+                            // 微同心反光微槽
+                            ForEach(0..<5) { i in
+                                Circle()
+                                    .stroke(Color.white.opacity(0.07), lineWidth: 1)
+                                    .frame(width: CGFloat(60 + i * 26), height: CGFloat(60 + i * 26))
+                            }
+                        }
+
+                    // 黑胶中央色标
+                    Circle()
+                        .fill(Color(hex: track.primaryColorHex ?? "#3B82F6"))
+                        .frame(width: 60, height: 60)
+                        .overlay {
+                            Circle().stroke(Color.white.opacity(0.3), lineWidth: 1)
+                        }
+                        .overlay {
+                            Circle().fill(Color.black).frame(width: 14, height: 14)
+                        }
+                }
+                .frame(width: 190, height: 190)
+                .rotationEffect(.degrees(vinylRotation))
+                .offset(x: 46)
+                .shadow(color: Color.black.opacity(0.55), radius: 16, x: 10, y: 8)
+
+                // 2. 实体哑光高保真封套 (Matte Album Sleeve)
                 artworkContent(for: track)
-                    .frame(width: 215, height: 215)
-                    .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+                    .frame(width: 205, height: 205)
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
                     .overlay {
-                        RoundedRectangle(cornerRadius: 24, style: .continuous)
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
                             .stroke(
                                 LinearGradient(
-                                    colors: [Color.white.opacity(0.3), Color.clear],
+                                    colors: [Color.white.opacity(0.35), Color.white.opacity(0.05)],
                                     startPoint: .topLeading,
                                     endPoint: .bottomTrailing
                                 ),
@@ -158,25 +195,32 @@ public struct ImmersiveNowPlayingView: View {
                             )
                     }
                     .shadow(
-                        color: Color(hex: track.primaryColorHex ?? "#3B82F6").opacity(0.45),
-                        radius: 28,
-                        x: 0,
+                        color: Color.black.opacity(0.65),
+                        radius: 25,
+                        x: -5,
                         y: 14
                     )
-                    .spatialTilt()
+                    .shadow(
+                        color: Color(hex: track.primaryColorHex ?? "#3B82F6").opacity(0.4),
+                        radius: 30,
+                        x: 0,
+                        y: 10
+                    )
+                    .offset(x: -20)
             }
         }
-        .frame(height: 225)
+        .frame(height: 235)
+        .spatialTilt()
     }
 
-    // MARK: - 拟真黑胶唱片视图
+    // MARK: - 拟真全盘黑胶唱片视图
     private var vinylRecordView: some View {
         ZStack {
             // 真实黑胶唱片盘面
             Circle()
                 .fill(
                     RadialGradient(
-                        colors: [Color(red: 0.1, green: 0.1, blue: 0.1), Color.black],
+                        colors: [Color(red: 0.12, green: 0.12, blue: 0.14), Color.black],
                         center: .center,
                         startRadius: 40,
                         endRadius: 150
@@ -190,24 +234,34 @@ public struct ImmersiveNowPlayingView: View {
                             .frame(width: CGFloat(90 + i * 36), height: CGFloat(90 + i * 36))
                     }
                 }
-                .frame(width: 280, height: 280)
+                .frame(width: 260, height: 260)
                 .shadow(color: Color.black.opacity(0.6), radius: 30, x: 0, y: 15)
 
             // 黑胶中心圆形封面
             if let track = player.currentTrack {
-                artworkContent(for: track)
-                    .frame(width: 110, height: 110)
-                    .clipShape(Circle())
-                    .overlay {
-                        Circle()
-                            .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                    }
-                    .overlay {
-                        // 中心轴孔
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: 18, height: 18)
-                    }
+                if let img = track.coverImage {
+                    Image(uiImage: img)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .overlay {
+                            Circle().stroke(Color.white.opacity(0.4), lineWidth: 1.5)
+                        }
+                        .overlay {
+                            Circle().fill(Color.black).frame(width: 16, height: 16)
+                        }
+                } else {
+                    artworkContent(for: track)
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .overlay {
+                            Circle().stroke(Color.white.opacity(0.4), lineWidth: 1.5)
+                        }
+                        .overlay {
+                            Circle().fill(Color.black).frame(width: 16, height: 16)
+                        }
+                }
             }
         }
         .rotationEffect(.degrees(vinylRotation))
@@ -225,7 +279,7 @@ public struct ImmersiveNowPlayingView: View {
                 }
             }
         }
-        .frame(height: 320)
+        .frame(height: 250)
     }
 
     // MARK: - 逐行沉浸歌词
@@ -455,7 +509,7 @@ public struct ImmersiveNowPlayingView: View {
 
     @ViewBuilder
     private func artworkContent(for track: Track) -> some View {
-        if let data = track.artworkData, let img = UIImage(data: data) {
+        if let img = track.coverImage {
             Image(uiImage: img)
                 .resizable()
                 .scaledToFill()

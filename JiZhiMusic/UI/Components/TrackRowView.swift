@@ -92,8 +92,8 @@ public struct TrackRowView: View {
 
     @ViewBuilder
     private var artworkView: some View {
-        if let data = track.artworkData, let uiImage = UIImage(data: data) {
-            Image(uiImage: uiImage)
+        if let img = track.coverImage {
+            Image(uiImage: img)
                 .resizable()
                 .scaledToFill()
         } else {

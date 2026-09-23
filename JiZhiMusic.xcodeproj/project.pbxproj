@@ -13,12 +13,15 @@
 		221B39A21EE93251C1F6D685 /* VisualizerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B883325C5D2BAC454C5402B /* VisualizerBarView.swift */; };
 		2F2961905BB0A935E825426F /* FloatingCapsuleMiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */; };
 		2F319A4AEA23332ABDFF4363 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED7922E3DFC655189F783E /* HapticFeedback.swift */; };
+		32F77FB5344F4C3E68EAD2A2 /* cover_aurora.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED09E10FFB122B4EB219F821 /* cover_aurora.jpg */; };
 		331C0B51FB71F4B98CEEB8C6 /* WebDAVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FE43C4ADA2747B780B3E0 /* WebDAVClient.swift */; };
 		44116FEFB8B7E7F64ACDC972 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C3F76478CFF051ED2514E /* GlassCard.swift */; };
 		47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88E2C4B234E0770CF42D968 /* Assets.xcassets */; };
 		68D0C5C025E6F46F68D7597C /* FluidMeshBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */; };
+		7B16B204824DA2E40E5A86C6 /* cover_midnight_rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */; };
 		81D6E40C02E0C463AB3E4B30 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AACE341CA2F9FD621EF200 /* ExploreView.swift */; };
 		91FB2A5411BD4BE9567D8B3C /* NowPlayingUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2204EF9EE7E385147000D3 /* NowPlayingUpdater.swift */; };
+		93218758342A6240CC1041BA /* demo_midnight_rain.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */; };
 		972FF543FCDFF335858E7FE7 /* JiZhiMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */; };
 		98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */; };
 		9CB0CE0F667F6242CF7828F6 /* WaveformScrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C20829429611A1A872BC /* WaveformScrubber.swift */; };
@@ -27,6 +30,7 @@
 		A9F0B291762C6288D580BE3D /* LocalVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20900A6C60D22A8F76767592 /* LocalVaultView.swift */; };
 		AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */; };
 		B1728CA566D759DB2449E5DF /* MediaLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */; };
+		B347FDE221F156C9902CBB5A /* cover_clair_de_lune.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E0235FF76E70CA83B42AE9E /* cover_clair_de_lune.jpg */; };
 		C589AD9AE755B2E2B77DFE88 /* ImmersiveNowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */; };
 		DA0A4C8C82322FDAA6189725 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71A8D04C489AC47F2478E1 /* SettingsView.swift */; };
 		DFE3CFCC3572AF92B31AEDEB /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EB59D0FD5C09F1E139C56 /* Album.swift */; };
@@ -49,6 +53,7 @@
 		82ED7922E3DFC655189F783E /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidMeshBackground.swift; sourceTree = "<group>"; };
 		8DD4BBD99D2BFB642AC5842C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		8E0235FF76E70CA83B42AE9E /* cover_clair_de_lune.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_clair_de_lune.jpg; sourceTree = "<group>"; };
 		963C3F76478CFF051ED2514E /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
 		99EA511F992AA7EC0D6B315C /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		A10A84D385D634BCEB3DD8F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -57,8 +62,11 @@
 		B3D6C20829429611A1A872BC /* WaveformScrubber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformScrubber.swift; sourceTree = "<group>"; };
 		C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveNowPlayingView.swift; sourceTree = "<group>"; };
 		CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayTemplateManager.swift; sourceTree = "<group>"; };
+		CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */ = {isa = PBXFileReference; path = demo_midnight_rain.m4a; sourceTree = "<group>"; };
+		DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_midnight_rain.jpg; sourceTree = "<group>"; };
 		E88E2C4B234E0770CF42D968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E932128D465230F37535A090 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		ED09E10FFB122B4EB219F821 /* cover_aurora.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_aurora.jpg; sourceTree = "<group>"; };
 		EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCapsuleMiniPlayer.swift; sourceTree = "<group>"; };
 		F3AACE341CA2F9FD621EF200 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +149,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		77771232ED7628FCAAD761A6 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		7E7B5FC5A530150112D886C3 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +204,16 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		AD21872793E9C5A1C243E40E /* Covers */ = {
+			isa = PBXGroup;
+			children = (
+				ED09E10FFB122B4EB219F821 /* cover_aurora.jpg */,
+				8E0235FF76E70CA83B42AE9E /* cover_clair_de_lune.jpg */,
+				DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */,
+			);
+			path = Covers;
+			sourceTree = "<group>";
+		};
 		CD908101BA12CC57E8311F6B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				E88E2C4B234E0770CF42D968 /* Assets.xcassets */,
+				77771232ED7628FCAAD761A6 /* Audio */,
+				AD21872793E9C5A1C243E40E /* Covers */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -294,6 +322,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */,
+				32F77FB5344F4C3E68EAD2A2 /* cover_aurora.jpg in Resources */,
+				B347FDE221F156C9902CBB5A /* cover_clair_de_lune.jpg in Resources */,
+				7B16B204824DA2E40E5A86C6 /* cover_midnight_rain.jpg in Resources */,
+				93218758342A6240CC1041BA /* demo_midnight_rain.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

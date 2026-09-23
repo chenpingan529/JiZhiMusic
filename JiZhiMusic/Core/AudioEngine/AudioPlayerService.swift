@@ -99,8 +99,9 @@ public final class AudioPlayerService {
         self.duration = track.duration
         self.currentTime = 0
 
-        // 尝试加载真实文件/流，或启动平滑拟真时钟
-        if let url = track.fileURL ?? track.remoteURL {
+        // 尝试加载真实文件/流或内置无损母带
+        let playbackURL = track.fileURL ?? track.remoteURL ?? Bundle.main.url(forResource: "demo_midnight_rain", withExtension: "m4a")
+        if let url = playbackURL {
             let playerItem = AVPlayerItem(url: url)
             if avPlayer == nil {
                 avPlayer = AVPlayer(playerItem: playerItem)
@@ -110,7 +111,7 @@ public final class AudioPlayerService {
             }
             avPlayer?.play()
         } else {
-            // Demo 轨道的真实声学时钟与频谱驱动
+            // Demo 轨道的拟真声学时钟与频谱驱动
             startSyntheticPlayback()
         }
 

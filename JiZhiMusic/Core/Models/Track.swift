@@ -100,6 +100,23 @@ public struct Track: Identifiable, Codable, Hashable, Sendable {
     public var audioQualityBadge: String {
         "\(bitDepth) / \(sampleRate) \(format.rawValue)"
     }
+
+    /// 高清封面图片
+    public var coverImage: UIImage? {
+        if let data = artworkData, let img = UIImage(data: data) {
+            return img
+        }
+        if let name = artworkName {
+            if let path = Bundle.main.path(forResource: name, ofType: "jpg"),
+               let img = UIImage(contentsOfFile: path) {
+                return img
+            }
+            if let img = UIImage(named: name) {
+                return img
+            }
+        }
+        return nil
+    }
 }
 
 /// 逐行歌词模型

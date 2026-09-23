@@ -54,12 +54,12 @@ public struct FloatingCapsuleMiniPlayer: View {
                 .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: 2)
 
             // 歌曲标题与艺术家
-            VStack(alignment: .leading, spacing: 3) {
-                Text(track.title)
+            VStack(alignment: .leading, spacing: 2) {
+                let cleanTitle = track.title.components(separatedBy: " (").first ?? track.title
+                Text(cleanTitle)
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.white)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.85)
 
                 HStack(spacing: 5) {
                     Text(track.artist)
@@ -190,8 +190,8 @@ public struct FloatingCapsuleMiniPlayer: View {
 
     @ViewBuilder
     private var miniArtwork: some View {
-        if let data = track.artworkData, let uiImage = UIImage(data: data) {
-            Image(uiImage: uiImage)
+        if let img = track.coverImage {
+            Image(uiImage: img)
                 .resizable()
                 .scaledToFill()
         } else {

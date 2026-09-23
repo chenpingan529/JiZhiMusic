@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// 发现/精选主页 (Explore View)
+/// 发现/精选主页 (Explore View) - 奢华声学母带美学
 public struct ExploreView: View {
     @Bindable var player: AudioPlayerService
 
@@ -14,7 +14,7 @@ public struct ExploreView: View {
                 Color(red: 0.05, green: 0.05, blue: 0.08).ignoresSafeArea()
 
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
+                    VStack(alignment: .leading, spacing: 26) {
                         // 顶部声学母带 Hero Banner
                         heroBannerCard
                             .padding(.horizontal, 20)
@@ -22,10 +22,18 @@ public struct ExploreView: View {
 
                         // 精选场景歌单
                         VStack(alignment: .leading, spacing: 14) {
-                            Text("场景歌单")
-                                .font(.system(size: 18, weight: .bold))
-                                .foregroundStyle(.white)
-                                .padding(.horizontal, 20)
+                            HStack {
+                                Text("场景歌单")
+                                    .font(.system(size: 19, weight: .bold))
+                                    .foregroundStyle(.white)
+
+                                Spacer()
+
+                                Text("CarPlay 专选")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundStyle(.white.opacity(0.45))
+                            }
+                            .padding(.horizontal, 20)
 
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 16) {
@@ -37,12 +45,18 @@ public struct ExploreView: View {
                             }
                         }
 
-                        // 最近收听与推荐
-                        VStack(alignment: .leading, spacing: 10) {
+                        // 最近收听与母带推荐
+                        VStack(alignment: .leading, spacing: 12) {
                             HStack {
-                                Text("推荐音轨")
-                                    .font(.system(size: 18, weight: .bold))
-                                    .foregroundStyle(.white)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("母带级精选")
+                                        .font(.system(size: 19, weight: .bold))
+                                        .foregroundStyle(.white)
+
+                                    Text("全链路高保真无损音源")
+                                        .font(.system(size: 12))
+                                        .foregroundStyle(.white.opacity(0.45))
+                                }
 
                                 Spacer()
 
@@ -50,13 +64,17 @@ public struct ExploreView: View {
                                     HapticFeedback.light()
                                     player.playTrack(SampleData.tracks[0], inQueue: SampleData.tracks)
                                 }) {
-                                    HStack(spacing: 4) {
+                                    HStack(spacing: 5) {
                                         Image(systemName: "play.fill")
                                             .font(.system(size: 11))
                                         Text("播放全部")
                                             .font(.system(size: 13, weight: .semibold))
                                     }
                                     .foregroundStyle(Color.accentColor)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                                    .background(Color.white.opacity(0.08))
+                                    .clipShape(Capsule())
                                 }
                             }
                             .padding(.horizontal, 20)
@@ -74,7 +92,7 @@ public struct ExploreView: View {
                             }
                         }
                     }
-                    .padding(.bottom, 100)
+                    .padding(.bottom, 120)
                 }
             }
             .navigationTitle("极致音乐")
@@ -82,54 +100,116 @@ public struct ExploreView: View {
         }
     }
 
-    // MARK: - 顶部光彩 Banner
+    // MARK: - 顶部母带级声学 Hero Spotlight
     private var heroBannerCard: some View {
-        ZStack(alignment: .bottomLeading) {
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(
+        Button(action: {
+            HapticFeedback.medium()
+            player.playTrack(SampleData.tracks[0], inQueue: SampleData.tracks)
+        }) {
+            ZStack(alignment: .bottomLeading) {
+                // 真实高清专辑摄影封面背景
+                if let img = SampleData.tracks[0].coverImage {
+                    Image(uiImage: img)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 210)
+                        .clipped()
+                } else {
                     LinearGradient(
-                        colors: [Color(hex: "#4F46E5"), Color(hex: "#7C3AED"), Color(hex: "#DB2777")],
+                        colors: [Color(hex: "#1E3A8A"), Color(hex: "#3B82F6")],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
+                }
+
+                // 电影级暗部层次与微光
+                LinearGradient(
+                    colors: [
+                        Color.black.opacity(0.15),
+                        Color.black.opacity(0.45),
+                        Color.black.opacity(0.92)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
                 )
-                .overlay {
-                    // 声波装饰光晕
-                    Circle()
-                        .fill(Color.white.opacity(0.12))
-                        .frame(width: 220, height: 220)
-                        .offset(x: 100, y: -40)
-                        .blur(radius: 20)
-                }
 
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    Text("SPATIAL AUDIO • 24-BIT HI-RES")
-                        .font(.system(size: 10, weight: .black, design: .monospaced))
+                // 实体内边框高光
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
+
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        // 奢华金色 Hi-Res 徽章
+                        Text("24-BIT / 96kHz HI-RES")
+                            .font(.system(size: 9, weight: .black, design: .monospaced))
+                            .foregroundStyle(Color.yellow)
+                            .padding(.horizontal, 7)
+                            .padding(.vertical, 3)
+                            .background(Color.yellow.opacity(0.2))
+                            .clipShape(Capsule())
+                            .overlay(Capsule().stroke(Color.yellow.opacity(0.4), lineWidth: 0.5))
+
+                        Spacer()
+
+                        HStack(spacing: 5) {
+                            Image(systemName: "car.side.fill")
+                            Text("CarPlay 同步")
+                        }
+                        .font(.system(size: 11, weight: .semibold))
                         .foregroundStyle(.white.opacity(0.85))
-                        .tracking(1.5)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(Color.white.opacity(0.18))
+                        .clipShape(Capsule())
+                    }
 
-                    Spacer()
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("午夜流光 (Midnight Rain)")
+                            .font(.system(size: 22, weight: .heavy))
+                            .foregroundStyle(.white)
 
-                    Image(systemName: "car.side.fill")
-                        .foregroundStyle(.white.opacity(0.8))
+                        Text("Aetheria Ensemble • 原声母带全景声")
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundStyle(.white.opacity(0.75))
+                    }
+
+                    HStack {
+                        HStack(spacing: 6) {
+                            Image(systemName: player.isPlaying && player.currentTrack?.id == SampleData.tracks[0].id ? "pause.fill" : "play.fill")
+                                .font(.system(size: 12, weight: .bold))
+                            Text(player.isPlaying && player.currentTrack?.id == SampleData.tracks[0].id ? "正在播放" : "即刻试听")
+                                .font(.system(size: 13, weight: .bold))
+                        }
+                        .foregroundStyle(.black)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 7)
+                        .background(Color.white)
+                        .clipShape(Capsule())
+
+                        Spacer()
+
+                        // 动态微声波
+                        if player.isPlaying && player.currentTrack?.id == SampleData.tracks[0].id {
+                            VisualizerBarView(
+                                levels: player.visualizerLevels,
+                                barCount: 8,
+                                activeColor: Color.white,
+                                height: 16
+                            )
+                        }
+                    }
+                    .padding(.top, 4)
                 }
-
-                Text("流体声学殿堂")
-                    .font(.system(size: 26, weight: .heavy))
-                    .foregroundStyle(.white)
-
-                Text("全链路原声母带回放，车机与移动端零延迟接力")
-                    .font(.system(size: 13))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .lineLimit(2)
+                .padding(18)
             }
-            .padding(20)
+            .frame(height: 210)
+            .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+            .shadow(color: Color.black.opacity(0.5), radius: 20, x: 0, y: 10)
         }
-        .frame(height: 160)
-        .shadow(color: Color(hex: "#7C3AED").opacity(0.4), radius: 20, x: 0, y: 10)
+        .buttonStyle(.plain)
     }
 
+    // MARK: - 场景歌单卡片 (展示真实高保真封面)
     private func playlistCard(_ playlist: Playlist) -> some View {
         Button(action: {
             HapticFeedback.light()
@@ -138,19 +218,36 @@ public struct ExploreView: View {
             }
         }) {
             VStack(alignment: .leading, spacing: 10) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .fill(Color.white.opacity(0.08))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                                .stroke(Color.white.opacity(0.12), lineWidth: 0.5)
-                        }
+                ZStack(alignment: .bottomLeading) {
+                    if let firstTrack = playlist.tracks.first, let img = firstTrack.coverImage {
+                        Image(uiImage: img)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 140, height: 140)
+                            .clipped()
+                    } else {
+                        Color(hex: "#1E293B")
+                            .frame(width: 140, height: 140)
+                    }
+
+                    LinearGradient(
+                        colors: [Color.clear, Color.black.opacity(0.75)],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
 
                     Image(systemName: playlist.iconName)
-                        .font(.system(size: 36, weight: .light))
-                        .foregroundStyle(.white.opacity(0.85))
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .padding(10)
                 }
                 .frame(width: 140, height: 140)
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .stroke(Color.white.opacity(0.15), lineWidth: 0.8)
+                }
+                .shadow(color: Color.black.opacity(0.35), radius: 10, x: 0, y: 5)
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(playlist.title)
