@@ -4,10 +4,37 @@ import SwiftUI
 
 public enum SampleData {
     public static var demoAudioURL: URL? {
-        Bundle.main.url(forResource: "demo_midnight_rain", withExtension: "m4a")
+        Bundle.main.url(forResource: "demo_chinese_dj", withExtension: "m4a") ?? Bundle.main.url(forResource: "demo_midnight_rain", withExtension: "m4a")
     }
 
     public static let tracks: [Track] = [
+        Track(
+            title: "极速公路 · 中文沉浸车载 DJ (2026 Master)",
+            artist: "DJ 极致电音混音工坊",
+            album: "深夜公路·重低音环绕声大碟",
+            duration: 47,
+            fileURL: Bundle.main.url(forResource: "demo_chinese_dj", withExtension: "m4a"),
+            artworkName: "cover_chinese_dj",
+            artworkData: loadCoverData(named: "cover_chinese_dj"),
+            format: .flac,
+            sampleRate: "96.0 kHz",
+            bitDepth: "24-Bit HD",
+            bitRate: "3200 kbps",
+            sourceType: .demo,
+            isFavorite: true,
+            lyrics: [
+                LyricLine(time: 0, text: "【公路前奏】深夜霓虹光影，引擎低鸣唤醒"),
+                LyricLine(time: 4, text: "踏下油门，低频重低音蓄势待发"),
+                LyricLine(time: 7.5, text: "⚡️ BASS DROP！极致声浪冲击耳膜 ⚡️"),
+                LyricLine(time: 15, text: "风驰电掣，穿梭于流光溢彩的立交桥"),
+                LyricLine(time: 22.5, text: "【间奏回旋】电子合成器铺满立体声场"),
+                LyricLine(time: 30, text: "🔥 HIGH ENERGY DROP！全频段火力全开 🔥"),
+                LyricLine(time: 38, text: "车机屏幕律动，心跳与节拍完美共振"),
+                LyricLine(time: 44, text: "尾韵回响，黑胶唱针缓缓收束")
+            ],
+            primaryColorHex: "#6B21A8",
+            secondaryColorHex: "#06B6D4"
+        ),
         Track(
             title: "Midnight Rain (午夜流光)",
             artist: "Aetheria Ensemble",
@@ -86,46 +113,59 @@ public enum SampleData {
 
     public static let albums: [Album] = [
         Album(
+            title: "深夜公路·重低音环绕声大碟",
+            artist: "DJ 极致电音混音工坊",
+            year: "2026",
+            artworkName: "cover_chinese_dj",
+            tracks: [tracks[0]]
+        ),
+        Album(
             title: "Spatial Odyssey",
             artist: "Aetheria Ensemble",
             year: "2026",
             artworkName: "cover_midnight_rain",
-            tracks: [tracks[0]]
+            tracks: [tracks[1]]
         ),
         Album(
             title: "Suite Bergamasque",
             artist: "Claude Debussy",
             year: "1905 / 2026 Remaster",
             artworkName: "cover_clair_de_lune",
-            tracks: [tracks[1]]
+            tracks: [tracks[2]]
         ),
         Album(
             title: "Glacier Reverie",
             artist: "Nordic Soundscapes",
             year: "2026",
             artworkName: "cover_aurora",
-            tracks: [tracks[2]]
+            tracks: [tracks[3]]
         )
     ]
 
     public static let playlists: [Playlist] = [
         Playlist(
+            title: "中文慢摇重低音 (Chinese DJ)",
+            subtitle: "车载发烧 3D 环绕电音特辑",
+            iconName: "bolt.horizontal.fill",
+            tracks: [tracks[0]]
+        ),
+        Playlist(
             title: "驾车漫游 (Car Cruise)",
             subtitle: "专为 CarPlay 调谐的沉浸歌单",
             iconName: "car.side.fill",
-            tracks: [tracks[0], tracks[2]]
+            tracks: [tracks[0], tracks[1], tracks[3]]
         ),
         Playlist(
             title: "月光静听 (Moonlight Focus)",
             subtitle: "深夜聆听，母带级声学体验",
             iconName: "moon.stars.fill",
-            tracks: [tracks[1], tracks[0]]
+            tracks: [tracks[2], tracks[1]]
         ),
         Playlist(
             title: "我的最爱 (Favorites)",
             subtitle: "星标收藏的无损音轨",
             iconName: "heart.fill",
-            tracks: [tracks[0], tracks[1], tracks[2]]
+            tracks: [tracks[0], tracks[1], tracks[2], tracks[3]]
         )
     ]
 

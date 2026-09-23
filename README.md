@@ -1,13 +1,13 @@
 # 极致音乐 (JiZhi Music)
 
 <p align="center">
-  <img src="docs/screenshots/now_playing_screen.png" width="280" alt="全屏沉浸播放器" />
+  <img src="docs/screenshots/now_playing_screen.png" width="280" alt="全屏播放页" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/screenshots/main_screen.png" width="280" alt="主界面与悬浮胶囊" />
+  <img src="docs/screenshots/main_screen.png" width="280" alt="音乐列表主界面" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/iOS-26%2B%20%2F%20iOS%2027-blue?style=flat-square&logo=apple" alt="iOS 26/27+" />
+  <img src="https://img.shields.io/badge/iOS-26%2B-blue?style=flat-square&logo=apple" alt="iOS 26+" />
   <img src="https://img.shields.io/badge/Swift-6.0-orange?style=flat-square&logo=swift" alt="Swift 6.0" />
   <img src="https://img.shields.io/badge/CarPlay-Ready-brightgreen?style=flat-square&logo=apple" alt="CarPlay Ready" />
   <img src="https://img.shields.io/badge/Audio-24--Bit%20Hi--Res-gold?style=flat-square" alt="Hi-Res Audio" />
@@ -26,27 +26,32 @@
 
 ## ✨ 核心特性 (Key Features)
 
-### 🎨 1. 流体声学美学 (Fluid Acoustic Design)
-* **动态流体光环 (Adaptive Mesh Gradient)**：采用 iOS 18+ 原生 `MeshGradient` 算法，实时提取当前播放音轨的色彩声学光谱，背景如液体般平滑流淌漂移。
-* **悬浮胶囊迷你播放器 (Floating Capsule Mini Player)**：悬浮于原生 TabBar 之上，拥有超薄毛玻璃质感、微光边缘走线与实时声学动态跳动波形。支持向左/向右滑动手势切歌、上滑自然展开全屏。
-* **空间 3D 拟真视差 (Spatial 3D Tilt)**：在全屏沉浸播放页，封面支持随手势拖动与微角度晃动产生 3D 浮动感，仿若置身声学空间。
-* **动态声波进度条 (Waveform Scrubber)**：高精度拟真音频柱状波形替代单调细横线，拖动时配合 **Taptic Engine** 输出机械齿轮般的微妙刻度感（Tick Feedback）。
-* **黑胶唱片模式 (Vinyl Turntable Mode)**：支持一键切换至黑胶唱盘交互模式，同心音轨光晕随音乐节奏平滑旋转。
+### 🎨 1. 克制的原生设计 (iOS 26 Liquid Glass)
+* **两个 Tab，一目了然**：「音乐」即全部歌曲列表（本地与云端合并，顶部搜索，右上角 `+` 从「文件」导入）；「设置」集中管理外观、云端与回放选项。
+* **六套主题**：白色 / 暖色 / 清新 / 红色 / 深色 / 黑色，风格差异鲜明，切换即时生效并持久化；强调色、开关、Tab 栏同步变化。
+* **底部附件迷你播放器**：基于 `tabViewBottomAccessory`，左右滑动切歌，点击以 `zoom` 转场展开全屏播放页；滚动时 Tab 栏自动收起。
+* **全屏播放页**：大封面 + 封面取色氛围背景，音质徽章（格式 · 位深 · 采样率），随机 / 循环（列表 / 单曲）、AirPlay 输出，下滑即可关闭。
+* **触感反馈**：切 Tab、切歌、拖动进度均配有 Taptic 反馈，可在设置中关闭。
 
-### 🚗 2. Apple CarPlay 深度车载整合
-* **原生 CPTemplate 架构**：严格遵循 Apple 驾驶安全规范，基于 `CPTemplateApplicationSceneDelegate` 与 `CPInterfaceController` 构建车载专用模板树。
-* **驾驶精选与大触控设计**：提供行车专属快捷歌单、收藏音轨与大图标触控列表，切歌毫秒级推入 `CPNowPlayingTemplate.shared`。
-* **双端接力 (Handoff)**：上车连上 CarPlay 时进度零延迟接力，支持连车自动续播；下车断开时自动淡出暂停。
-* **全功能硬件支持**：完美支持车载多功能方向盘按键、车机旋转物理旋钮与锁屏控制中心（`MPNowPlayingInfoCenter` & `MPRemoteCommandCenter`）。
+### 🎤 2. 多风格歌词
+在播放页点击歌词按钮进入歌词模式，在「设置 → 外观」中选择风格：
 
-### 📂 3. 本地私库与私有云双轨音源
-* **本地私库 (Local Vault)**：
-  * 支持沙盒 `Documents` 目录自动扫描与系统「文件」App 导入。
-  * 自动解析 FLAC / ALAC / WAV / MP3 / DSD 元数据标签（ID3v2 / Vorbis Comments）与内嵌专辑封面。
-  * 开放 Finder / iTunes 文件共享与隔空投送（AirDrop）快速传歌。
-* **私有云端 (Cloud Vault - WebDAV / Alist)**：
-  * 自由对接 NAS（群晖、QNAP、TrueNAS）、Alist 或私有 WebDAV 服务器。
-  * 支持高保真音频流式在线点播，具备边播边存智能本地缓存机制。
+| 风格 | 效果 |
+| --- | --- |
+| 经典滚动 | 当前行高亮，逐行平滑滚动，点击任意行跳转播放 |
+| 卡拉 OK | 从左到右逐字填色，已填满的字带柔光 |
+| 逐字弹跳 | 每个字随进度依次跳起、放大并变为强调色 |
+| 霓虹律动 | 霓虹辉光随频谱电平与节拍呼吸 |
+| 居中聚焦 | 当前句大字居中，上下句淡化；新行模糊浮入 |
+| 粒子浮现 | 上浮光点背景，每个字从模糊碎片聚拢成形 |
+
+### 🚗 3. Apple CarPlay 车载整合
+* **原生 CPTemplate 架构**：基于 `CPTemplateApplicationSceneDelegate` 与 `CPInterfaceController` 构建车载模板树，切歌推入 `CPNowPlayingTemplate.shared`。
+* **锁屏与硬件控制**：接入 `MPNowPlayingInfoCenter` 与 `MPRemoteCommandCenter`，支持方向盘按键、锁屏与控制中心。
+
+### 📂 4. 本地与私有云双音源
+* **本地**：通过系统「文件」App 导入 FLAC / ALAC / WAV / MP3 等音频，支持 Finder 文件共享。
+* **私有云**：在「设置 → 云端」对接 WebDAV / Alist（群晖、QNAP、TrueNAS 等 NAS），歌曲直接出现在「音乐」列表中。
 
 ---
 
@@ -54,64 +59,61 @@
 
 ```mermaid
 flowchart TD
-    subgraph UI ["表现层 (Fluid Aesthetic & Spatial Design)"]
-        MeshBG["FluidMeshBackground (自适应流体网格渐变)"]
-        Dock["FloatingCapsuleMiniPlayer (悬浮胶囊迷你播放器)"]
-        Hero["ImmersiveNowPlayingView (全屏沉浸播放与波形控制)"]
-        Vault["LocalVault & CloudVault (本地/WebDAV 音乐库)"]
-        CarPlayView["CarPlay Template Scenes (行车专属界面)"]
+    subgraph UI ["表现层 (SwiftUI · iOS 26)"]
+        Tabs["MainTabView (音乐 / 设置)"]
+        Library["LibraryView (歌曲列表 · 搜索 · 导入)"]
+        Mini["MiniPlayerView (底部附件迷你播放器)"]
+        NowPlaying["NowPlayingView (全屏播放页)"]
+        Lyrics["LyricsStyles (六种歌词风格)"]
+        Settings["SettingsView (外观 / 云端 / 回放)"]
+        CarPlayView["CarPlayTemplateManager (车载模板)"]
     end
 
-    subgraph State ["状态中心 (@Observable)"]
-        PlayerService["AudioPlayerService (单例播放器控制器)"]
-        QueueManager["AudioQueueManager (播放队列与无缝切换)"]
-        HapticCenter["HapticFeedback (Taptic 微触觉引擎)"]
+    subgraph Design ["设计系统"]
+        Theme["Theme + ThemeStore (六套主题)"]
+        Artwork["ArtworkView + AmbientBackground (封面与取色背景)"]
+        Haptics["HapticFeedback (触感反馈)"]
     end
 
-    subgraph Audio ["底层音频与系统服务"]
-        AVPlayerCore["AVQueuePlayer + AVAudioSession (.playback)"]
-        NowPlayingCenter["MPNowPlayingInfoCenter & MPRemoteCommandCenter"]
-        CarPlayScene["CPTemplateApplicationSceneDelegate"]
+    subgraph State ["状态与音频 (@Observable)"]
+        Player["AudioPlayerService (播放 · 随机 · 循环)"]
+        NowPlayingInfo["NowPlayingUpdater (MPNowPlayingInfoCenter / MPRemoteCommandCenter)"]
     end
 
-    subgraph Storage ["存储与音源层"]
-        LocalScanner["MediaLibraryManager (Documents / 导入扫描)"]
-        WebDAVEngine["WebDAVClient (流式读取与智能缓存)"]
+    subgraph Storage ["音源层"]
+        Local["MediaLibraryManager (本地导入与扫描)"]
+        WebDAV["WebDAVClient (WebDAV / Alist)"]
     end
 
-    MeshBG --> Hero
-    Dock <--> Hero
-    Hero --> PlayerService
-    Vault --> PlayerService
-    CarPlayView --> CarPlayScene
-    CarPlayScene <--> PlayerService
-    PlayerService <--> QueueManager
-    PlayerService <--> AVPlayerCore
-    PlayerService <--> NowPlayingCenter
-    PlayerService <--> HapticCenter
-    PlayerService <--> LocalScanner
-    PlayerService <--> WebDAVEngine
+    Tabs --> Library & Settings & Mini
+    Mini --> NowPlaying --> Lyrics
+    Library & Mini & NowPlaying --> Player
+    CarPlayView --> Player
+    Player --> NowPlayingInfo
+    Library --> Local & WebDAV
+    Settings --> WebDAV
+    UI -.-> Design
 ```
 
 ---
 
 ## 🛠️ 技术选型 (Tech Stack)
 
-* **开发语言**：Swift 6.0（开启严格并发类型检查，杜绝线程数据竞争）
-* **UI 框架**：SwiftUI 6.0+（结合 `@Observable` 宏、`MeshGradient`、物理弹簧动画）
-* **音频引擎**：`AVFoundation` (`AVQueuePlayer`, `AVAudioSessionCategoryPlayback`)
-* **车载系统**：`CarPlay.framework` (`CPTemplateApplicationSceneDelegate`, `CPTabBarTemplate`, `CPListTemplate`, `CPNowPlayingTemplate`)
-* **系统联动**：`MediaPlayer.framework` (`MPNowPlayingInfoCenter`, `MPRemoteCommandCenter`)
-* **触觉反馈**：`UIKit` (`UIImpactFeedbackGenerator`, `UISelectionFeedbackGenerator`)
-* **工程构建**：`XcodeGen`（声明式 `project.yml`，零冲突规范化工程生成）
+* **开发语言**：Swift 6.0
+* **UI 框架**：SwiftUI（iOS 26 Liquid Glass、`@Observable`、`tabViewBottomAccessory`、`navigationTransition(.zoom)`）
+* **音频引擎**：`AVFoundation`（`AVPlayer`、`AVAudioSession` `.playback`）
+* **车载系统**：`CarPlay.framework`（`CPTemplateApplicationSceneDelegate`、`CPListTemplate`、`CPNowPlayingTemplate`）
+* **系统联动**：`MediaPlayer.framework`（`MPNowPlayingInfoCenter`、`MPRemoteCommandCenter`）
+* **触觉反馈**：`UIKit`（`UIImpactFeedbackGenerator`、`UISelectionFeedbackGenerator`）
+* **工程构建**：`XcodeGen`（声明式 `project.yml`）
 
 ---
 
 ## 🚀 编译与运行 (Quick Start)
 
 ### 1. 前置要求
-* macOS 14.0+ / macOS 15+ / macOS 26+
-* Xcode 16.0+ / Xcode 26+
+* macOS 26+
+* Xcode 26+（最低部署目标 iOS 26.0）
 * 安装 `xcodegen`（如果未安装）：
   ```bash
   brew install xcodegen
@@ -130,7 +132,7 @@ xcodegen generate
 ```bash
 open JiZhiMusic.xcodeproj
 ```
-* 在 Xcode 目标设备中选择任意 **iPhone 16 / 17 模拟器** 或真机，点击 **Run (⌘ + R)** 即可体验。
+* 在 Xcode 目标设备中选择任意 **iOS 26 模拟器** 或真机，点击 **Run (⌘ + R)** 即可体验。
 
 ### 4. 预览 Apple CarPlay 车载界面
 1. 启动 iOS 模拟器；

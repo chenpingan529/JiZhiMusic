@@ -10,72 +10,75 @@
 		00235BD470B58BD9CE47E6DF /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4BBD99D2BFB642AC5842C /* SampleData.swift */; };
 		16612D6F575980AF56B21460 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556EC444A3F70805D3ACCA85 /* MainTabView.swift */; };
 		1B68B921DFEABAB8ECEAF961 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E932128D465230F37535A090 /* AudioPlayerService.swift */; };
-		221B39A21EE93251C1F6D685 /* VisualizerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B883325C5D2BAC454C5402B /* VisualizerBarView.swift */; };
-		2F2961905BB0A935E825426F /* FloatingCapsuleMiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */; };
+		2D245E7AA42DC323BF8B9B22 /* LyricsStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8D95DF7C66778A095390B /* LyricsStyles.swift */; };
 		2F319A4AEA23332ABDFF4363 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED7922E3DFC655189F783E /* HapticFeedback.swift */; };
 		32F77FB5344F4C3E68EAD2A2 /* cover_aurora.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED09E10FFB122B4EB219F821 /* cover_aurora.jpg */; };
 		331C0B51FB71F4B98CEEB8C6 /* WebDAVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FE43C4ADA2747B780B3E0 /* WebDAVClient.swift */; };
-		44116FEFB8B7E7F64ACDC972 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C3F76478CFF051ED2514E /* GlassCard.swift */; };
+		3C6D42EFF3A7302648D89B2C /* demo_chinese_dj.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A435B2648AAC6761FED33795 /* demo_chinese_dj.m4a */; };
+		47A8A2062D6DAC790C0BBD5C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882EC0CD8C2C1E8E907B9A0 /* Theme.swift */; };
 		47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88E2C4B234E0770CF42D968 /* Assets.xcassets */; };
-		68D0C5C025E6F46F68D7597C /* FluidMeshBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */; };
+		704DAC5649E1D4EFFA29551F /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F87F9C79890EA5E4F5342 /* ThemeStore.swift */; };
 		7B16B204824DA2E40E5A86C6 /* cover_midnight_rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */; };
-		81D6E40C02E0C463AB3E4B30 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AACE341CA2F9FD621EF200 /* ExploreView.swift */; };
+		88122E6AA2BE5A1B1E274FEA /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CF3E03EA8A137473FA9AA /* CommonViews.swift */; };
 		91FB2A5411BD4BE9567D8B3C /* NowPlayingUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2204EF9EE7E385147000D3 /* NowPlayingUpdater.swift */; };
 		93218758342A6240CC1041BA /* demo_midnight_rain.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */; };
 		972FF543FCDFF335858E7FE7 /* JiZhiMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */; };
 		98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */; };
-		9CB0CE0F667F6242CF7828F6 /* WaveformScrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6C20829429611A1A872BC /* WaveformScrubber.swift */; };
-		A372765A778C20393ED114DB /* CloudVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC41F239690D2AE53919FA52 /* CloudVaultView.swift */; };
 		A702613E258518B40652FBF3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EA511F992AA7EC0D6B315C /* Track.swift */; };
-		A9F0B291762C6288D580BE3D /* LocalVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20900A6C60D22A8F76767592 /* LocalVaultView.swift */; };
+		ADA7F5398A6FB487F5B3A2EF /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9DDB0380F95DF371730B07 /* MiniPlayerView.swift */; };
 		AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */; };
 		B1728CA566D759DB2449E5DF /* MediaLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */; };
 		B347FDE221F156C9902CBB5A /* cover_clair_de_lune.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E0235FF76E70CA83B42AE9E /* cover_clair_de_lune.jpg */; };
-		C589AD9AE755B2E2B77DFE88 /* ImmersiveNowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */; };
 		DA0A4C8C82322FDAA6189725 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71A8D04C489AC47F2478E1 /* SettingsView.swift */; };
 		DFE3CFCC3572AF92B31AEDEB /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EB59D0FD5C09F1E139C56 /* Album.swift */; };
+		E47A0F2A457DFCFB9A2B956F /* cover_chinese_dj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49960207FEB038B9C432F7EF /* cover_chinese_dj.jpg */; };
+		E7DBECD0AA408190056B8FD9 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D956298B7A04E13B104E7B /* LibraryView.swift */; };
 		F130980139CEA215A116E5FA /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */; };
+		F761E48DA60D03EB8E1A2FF9 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C7C1324EA852911C77510 /* NowPlayingView.swift */; };
+		FD9650A0856A7B77C5D71A31 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7816E37233B7568B088AD /* Artwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20900A6C60D22A8F76767592 /* LocalVaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVaultView.swift; sourceTree = "<group>"; };
+		0FC8D95DF7C66778A095390B /* LyricsStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsStyles.swift; sourceTree = "<group>"; };
+		2882EC0CD8C2C1E8E907B9A0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		434EB59D0FD5C09F1E139C56 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		49960207FEB038B9C432F7EF /* cover_chinese_dj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_chinese_dj.jpg; sourceTree = "<group>"; };
+		4B9DDB0380F95DF371730B07 /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
 		4F4FE43C4ADA2747B780B3E0 /* WebDAVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDAVClient.swift; sourceTree = "<group>"; };
 		4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRowView.swift; sourceTree = "<group>"; };
 		51414CA456167F793B4B1BB1 /* JiZhiMusic.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = JiZhiMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556EC444A3F70805D3ACCA85 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		5B883325C5D2BAC454C5402B /* VisualizerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerBarView.swift; sourceTree = "<group>"; };
 		5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiZhiMusicApp.swift; sourceTree = "<group>"; };
 		6A71A8D04C489AC47F2478E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6E2204EF9EE7E385147000D3 /* NowPlayingUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUpdater.swift; sourceTree = "<group>"; };
+		6F3C7C1324EA852911C77510 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryManager.swift; sourceTree = "<group>"; };
 		82ED7922E3DFC655189F783E /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
-		88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidMeshBackground.swift; sourceTree = "<group>"; };
 		8DD4BBD99D2BFB642AC5842C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		8E0235FF76E70CA83B42AE9E /* cover_clair_de_lune.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_clair_de_lune.jpg; sourceTree = "<group>"; };
-		963C3F76478CFF051ED2514E /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
 		99EA511F992AA7EC0D6B315C /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		A10A84D385D634BCEB3DD8F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		AC41F239690D2AE53919FA52 /* CloudVaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudVaultView.swift; sourceTree = "<group>"; };
+		A16CF3E03EA8A137473FA9AA /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
+		A435B2648AAC6761FED33795 /* demo_chinese_dj.m4a */ = {isa = PBXFileReference; path = demo_chinese_dj.m4a; sourceTree = "<group>"; };
+		AA5F87F9C79890EA5E4F5342 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
 		AEE896554B611205122F2968 /* JiZhiMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JiZhiMusic.entitlements; sourceTree = "<group>"; };
-		B3D6C20829429611A1A872BC /* WaveformScrubber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformScrubber.swift; sourceTree = "<group>"; };
-		C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveNowPlayingView.swift; sourceTree = "<group>"; };
+		B8D956298B7A04E13B104E7B /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayTemplateManager.swift; sourceTree = "<group>"; };
 		CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */ = {isa = PBXFileReference; path = demo_midnight_rain.m4a; sourceTree = "<group>"; };
 		DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_midnight_rain.jpg; sourceTree = "<group>"; };
 		E88E2C4B234E0770CF42D968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E932128D465230F37535A090 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 		ED09E10FFB122B4EB219F821 /* cover_aurora.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_aurora.jpg; sourceTree = "<group>"; };
-		EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCapsuleMiniPlayer.swift; sourceTree = "<group>"; };
-		F3AACE341CA2F9FD621EF200 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		F5B7816E37233B7568B088AD /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		0E408C141A7921FC9F65963C /* NowPlaying */ = {
 			isa = PBXGroup;
 			children = (
-				C7221E30376EE74F27843034 /* ImmersiveNowPlayingView.swift */,
+				0FC8D95DF7C66778A095390B /* LyricsStyles.swift */,
+				6F3C7C1324EA852911C77510 /* NowPlayingView.swift */,
 			);
 			path = NowPlaying;
 			sourceTree = "<group>";
@@ -103,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				556EC444A3F70805D3ACCA85 /* MainTabView.swift */,
-				99A861A104548D96B3106FA3 /* Explore */,
 				D885AB6597106E8CFDFE3554 /* Library */,
 				0E408C141A7921FC9F65963C /* NowPlaying */,
 				772E113071EDC3AD3B97E48E /* Settings */,
@@ -133,10 +135,9 @@
 		6C42AC8AF6817157AD89A026 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EF140EC69215B39A27A70366 /* FloatingCapsuleMiniPlayer.swift */,
+				A16CF3E03EA8A137473FA9AA /* CommonViews.swift */,
+				4B9DDB0380F95DF371730B07 /* MiniPlayerView.swift */,
 				4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */,
-				5B883325C5D2BAC454C5402B /* VisualizerBarView.swift */,
-				B3D6C20829429611A1A872BC /* WaveformScrubber.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -152,6 +153,7 @@
 		77771232ED7628FCAAD761A6 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				A435B2648AAC6761FED33795 /* demo_chinese_dj.m4a */,
 				CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */,
 			);
 			path = Audio;
@@ -160,9 +162,10 @@
 		7E7B5FC5A530150112D886C3 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				88C58A8EF485DFA10564685A /* FluidMeshBackground.swift */,
-				963C3F76478CFF051ED2514E /* GlassCard.swift */,
+				F5B7816E37233B7568B088AD /* Artwork.swift */,
 				82ED7922E3DFC655189F783E /* HapticFeedback.swift */,
+				2882EC0CD8C2C1E8E907B9A0 /* Theme.swift */,
+				AA5F87F9C79890EA5E4F5342 /* ThemeStore.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -173,14 +176,6 @@
 				CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */,
 			);
 			path = CarPlay;
-			sourceTree = "<group>";
-		};
-		99A861A104548D96B3106FA3 /* Explore */ = {
-			isa = PBXGroup;
-			children = (
-				F3AACE341CA2F9FD621EF200 /* ExploreView.swift */,
-			);
-			path = Explore;
 			sourceTree = "<group>";
 		};
 		A0F6F704049AEE6EBEBC397B /* JiZhiMusic */ = {
@@ -208,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				ED09E10FFB122B4EB219F821 /* cover_aurora.jpg */,
+				49960207FEB038B9C432F7EF /* cover_chinese_dj.jpg */,
 				8E0235FF76E70CA83B42AE9E /* cover_clair_de_lune.jpg */,
 				DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */,
 			);
@@ -226,8 +222,7 @@
 		D885AB6597106E8CFDFE3554 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				AC41F239690D2AE53919FA52 /* CloudVaultView.swift */,
-				20900A6C60D22A8F76767592 /* LocalVaultView.swift */,
+				B8D956298B7A04E13B104E7B /* LibraryView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -289,7 +284,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					6510ACB80E38C064305D19D4 = {
 						DevelopmentTeam = PLH99FA6GF;
@@ -298,11 +293,11 @@
 				};
 			};
 			buildConfigurationList = 0483EB01A7F15EC7B3B34942 /* Build configuration list for PBXProject "JiZhiMusic" */;
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				en,
+				"zh-Hans",
 			);
 			mainGroup = 3FDE868E4F8E07543D31E616;
 			minimizedProjectReferenceProxies = 1;
@@ -323,8 +318,10 @@
 			files = (
 				47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */,
 				32F77FB5344F4C3E68EAD2A2 /* cover_aurora.jpg in Resources */,
+				E47A0F2A457DFCFB9A2B956F /* cover_chinese_dj.jpg in Resources */,
 				B347FDE221F156C9902CBB5A /* cover_clair_de_lune.jpg in Resources */,
 				7B16B204824DA2E40E5A86C6 /* cover_midnight_rain.jpg in Resources */,
+				3C6D42EFF3A7302648D89B2C /* demo_chinese_dj.m4a in Resources */,
 				93218758342A6240CC1041BA /* demo_midnight_rain.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,27 +334,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE3CFCC3572AF92B31AEDEB /* Album.swift in Sources */,
+				FD9650A0856A7B77C5D71A31 /* Artwork.swift in Sources */,
 				1B68B921DFEABAB8ECEAF961 /* AudioPlayerService.swift in Sources */,
 				F130980139CEA215A116E5FA /* CarPlaySceneDelegate.swift in Sources */,
 				AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */,
-				A372765A778C20393ED114DB /* CloudVaultView.swift in Sources */,
-				81D6E40C02E0C463AB3E4B30 /* ExploreView.swift in Sources */,
-				2F2961905BB0A935E825426F /* FloatingCapsuleMiniPlayer.swift in Sources */,
-				68D0C5C025E6F46F68D7597C /* FluidMeshBackground.swift in Sources */,
-				44116FEFB8B7E7F64ACDC972 /* GlassCard.swift in Sources */,
+				88122E6AA2BE5A1B1E274FEA /* CommonViews.swift in Sources */,
 				2F319A4AEA23332ABDFF4363 /* HapticFeedback.swift in Sources */,
-				C589AD9AE755B2E2B77DFE88 /* ImmersiveNowPlayingView.swift in Sources */,
 				972FF543FCDFF335858E7FE7 /* JiZhiMusicApp.swift in Sources */,
-				A9F0B291762C6288D580BE3D /* LocalVaultView.swift in Sources */,
+				E7DBECD0AA408190056B8FD9 /* LibraryView.swift in Sources */,
+				2D245E7AA42DC323BF8B9B22 /* LyricsStyles.swift in Sources */,
 				16612D6F575980AF56B21460 /* MainTabView.swift in Sources */,
 				B1728CA566D759DB2449E5DF /* MediaLibraryManager.swift in Sources */,
+				ADA7F5398A6FB487F5B3A2EF /* MiniPlayerView.swift in Sources */,
 				91FB2A5411BD4BE9567D8B3C /* NowPlayingUpdater.swift in Sources */,
+				F761E48DA60D03EB8E1A2FF9 /* NowPlayingView.swift in Sources */,
 				00235BD470B58BD9CE47E6DF /* SampleData.swift in Sources */,
 				DA0A4C8C82322FDAA6189725 /* SettingsView.swift in Sources */,
+				47A8A2062D6DAC790C0BBD5C /* Theme.swift in Sources */,
+				704DAC5649E1D4EFFA29551F /* ThemeStore.swift in Sources */,
 				A702613E258518B40652FBF3 /* Track.swift in Sources */,
 				98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */,
-				221B39A21EE93251C1F6D685 /* VisualizerBarView.swift in Sources */,
-				9CB0CE0F667F6242CF7828F6 /* WaveformScrubber.swift in Sources */,
 				331C0B51FB71F4B98CEEB8C6 /* WebDAVClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +451,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -516,7 +512,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = JiZhiMusic;

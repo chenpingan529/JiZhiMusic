@@ -74,8 +74,9 @@ public final class NowPlayingUpdater {
 
         // 生成高保真车载与锁屏封面图
         let artworkImage = generateArtworkImage(for: track)
-        let artwork = MPMediaItemArtwork(boundsSize: artworkImage.size) { _ in
-            return artworkImage
+        // 系统会在后台队列回调此闭包，必须标记为 @Sendable，否则会继承 MainActor 隔离并在运行时断言崩溃
+        let artwork = MPMediaItemArtwork(boundsSize: artworkImage.size) { @Sendable _ in
+            artworkImage
         }
         nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
 

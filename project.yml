@@ -2,15 +2,16 @@ name: JiZhiMusic
 options:
   bundleIdPrefix: com.chenpingan
   deploymentTarget:
-    iOS: "18.0"
-  xcodeVersion: "16.0"
+    iOS: "26.0"
+  xcodeVersion: "26.0"
   generateEmptyDirectories: true
+  developmentLanguage: zh-Hans
 settings:
   base:
     SWIFT_VERSION: "6.0"
     DEVELOPMENT_TEAM: "PLH99FA6GF"
     CODE_SIGN_STYLE: Automatic
-    IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
     GENERATE_INFOPLIST_FILE: false
     PRODUCT_NAME: "JiZhiMusic"
     SWIFT_STRICT_CONCURRENCY: minimal
@@ -22,6 +23,12 @@ targets:
       - path: JiZhiMusic
     info:
       path: JiZhiMusic/App/Info.plist
+      properties:
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        CFBundleLocalizations: [zh-Hans]
+        UILaunchScreen:
+          UIColorName: LaunchBackground
     entitlements:
       path: JiZhiMusic/App/JiZhiMusic.entitlements
     settings:

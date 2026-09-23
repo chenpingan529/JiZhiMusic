@@ -20,11 +20,14 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct JiZhiMusicApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State private var themeStore = ThemeStore.shared
 
     var body: some Scene {
         WindowGroup {
             MainTabView()
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(themeStore.colors.scheme)
+                .tint(themeStore.colors.accent)
+                .animation(Theme.Motion.smooth, value: themeStore.current)
         }
     }
 }
