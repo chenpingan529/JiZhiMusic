@@ -9,6 +9,7 @@ public struct LibraryView: View {
 
     @State private var searchText = ""
     @State private var showFileImporter = false
+    @State private var selectedMasterTrack: Track?
 
     public init(library: MediaLibraryManager, cloudClient: WebDAVClient, player: AudioPlayerService) {
         self.library = library
@@ -37,11 +38,11 @@ public struct LibraryView: View {
     public var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: Theme.Spacing.sm) {
+                VStack(alignment: .leading, spacing: Theme.Spacing.md) {
                     if !visibleTracks.isEmpty && searchText.isEmpty {
+                        spotlightHeroSection
                         playButtons
                             .padding(.horizontal, Theme.Spacing.page)
-                            .padding(.bottom, Theme.Spacing.xs)
                     }
                     trackList
                 }
@@ -74,7 +75,93 @@ public struct LibraryView: View {
                     HapticFeedback.success()
                 }
             }
+            .sheet(item: $selectedMasterTrack) { track in
+                AudioMasterSheet(track: track)
+            }
         }
+    }
+
+    // MARK: - 精选母带声学展台
+    private var spotlightHeroSection: some View {
+        VStack(alignment: .leading, spacing: Theme.Spacing.xs) {
+            Text("精选母带推荐")
+                .font(.system(size: 13, weight: .bold))
+                .foregroundStyle(Theme.Palette.textSecondary)
+                .textCase(.uppercase)
+                .padding(.horizontal, Theme.Spacing.page)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 14) {
+                    ForEach(visibleTracks.prefix(3)) { track in
+                        spotlightCard(track)
+                    }
+                }
+                .padding(.horizontal, Theme.Spacing.page)
+                .scrollTargetLayout()
+            }
+            .scrollTargetBehavior(.viewAligned)
+        }
+    }
+
+    private func spotlightCard(_ track: Track) -> some View {
+        Button {
+            HapticFeedback.medium()
+            player.playTrack(track, inQueue: visibleTracks)
+        } label: {
+            HStack(spacing: 14) {
+                ArtworkView(track: track, cornerRadius: 12)
+                    .frame(width: 88, height: 88)
+                    .shadow(color: .black.opacity(0.35), radius: 8, y: 4)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack(spacing: 6) {
+                        Text("HI-RES")
+                            .font(.system(size: 10, weight: .black, design: .rounded))
+                            .foregroundStyle(Theme.Palette.lossless)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(Theme.Palette.lossless.opacity(0.16), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+
+                        Text(track.format.rawValue)
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundStyle(Theme.Palette.textTertiary)
+                    }
+
+                    Text(track.title)
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(Theme.Palette.textPrimary)
+                        .lineLimit(1)
+
+                    Text(track.artist)
+                        .font(.system(size: 13))
+                        .foregroundStyle(Theme.Palette.textSecondary)
+                        .lineLimit(1)
+
+                    HStack {
+                        Text("\(track.bitDepth) · \(track.sampleRate)")
+                            .font(.system(size: 11, weight: .medium, design: .monospaced))
+                            .foregroundStyle(Theme.Palette.textTertiary)
+
+                        Spacer()
+
+                        Image(systemName: player.currentTrack?.id == track.id && player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                            .font(.system(size: 26))
+                            .foregroundStyle(Theme.Palette.accent)
+                    }
+                    .padding(.top, 2)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .padding(12)
+            .frame(width: 290, height: 112)
+            .background(Theme.Palette.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .strokeBorder(Color.white.opacity(0.08), lineWidth: 1)
+            )
+            .contentShape(.rect)
+        }
+        .buttonStyle(PressScaleStyle())
     }
 
     // MARK: - 播放全部 / 随机播放
@@ -138,10 +225,37 @@ public struct LibraryView: View {
                     ) {
                         player.playTrack(track, inQueue: visibleTracks)
                     }
+                    .contextMenu {
+                        Button {
+                            player.playTrack(track, inQueue: visibleTracks)
+                        } label: {
+                            Label("立即播放", systemImage: "play.fill")
+                        }
+
+                        Button {
+                            player.insertNext(track)
+                            HapticFeedback.light()
+                        } label: {
+                            Label("下一首播放", systemImage: "text.line.first.and.arrowtriangle.forward")
+                        }
+
+                        Button {
+                            player.appendToQueue(track)
+                            HapticFeedback.light()
+                        } label: {
+                            Label("加入播放列表末尾", systemImage: "text.badge.plus")
+                        }
+
+                        Button {
+                            selectedMasterTrack = track
+                        } label: {
+                            Label("母带解析规格", systemImage: "waveform.badge.magnifyingglass")
+                        }
                 }
             }
         }
     }
+}
 }
 
 /// 通用按压回弹

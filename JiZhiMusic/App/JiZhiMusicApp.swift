@@ -30,11 +30,18 @@ struct JiZhiMusicApp: App {
                 .tint(themeStore.colors.accent)
                 .animation(Theme.Motion.smooth, value: themeStore.current)
         }
-        // 隔空传歌只在前台运行：进入后台即断开，回到前台重新发现附近设备
+        // 隔空传歌：延迟 1 秒轻量启动，避免与首屏加载争抢主线程与射频资源
         .onChange(of: scenePhase, initial: true) { _, phase in
             switch phase {
-            case .active: PeerShareService.shared.start()
-            case .background: PeerShareService.shared.stop()
+            case .active:
+                Task {
+                    try? await Task.sleep(for: .seconds(1.2))
+                    if scenePhase == .active {
+                        PeerShareService.shared.start()
+                    }
+                }
+            case .background:
+                PeerShareService.shared.stop()
             default: break
             }
         }

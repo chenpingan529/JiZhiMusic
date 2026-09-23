@@ -12,8 +12,10 @@ public struct NowPlayingView: View {
 
     #if DEBUG
     @State private var panel: Panel = ProcessInfo.processInfo.arguments.contains("-openLyrics") ? .lyrics : .artwork
+    @State private var showMasterSheet = ProcessInfo.processInfo.arguments.contains("-openMasterSheet")
     #else
     @State private var panel: Panel = .artwork
+    @State private var showMasterSheet = false
     #endif
     @AppStorage(LyricsStyle.storageKey) private var lyricsStyle: LyricsStyle = .classic
     @Namespace private var artworkSpace
@@ -33,7 +35,8 @@ public struct NowPlayingView: View {
 
                     VStack(spacing: 0) {
                         if panel == .artwork {
-                            artworkStage(track)
+                            VinylSleeveStage(track: track, isPlaying: player.isPlaying, namespace: artworkSpace)
+                                .frame(maxHeight: .infinity)
                         } else {
                             compactHeader(track)
                                 .padding(.horizontal, Theme.Spacing.page)
@@ -51,7 +54,7 @@ public struct NowPlayingView: View {
                         if panel == .artwork {
                             trackInfo(track)
                         }
-                        ProgressScrubber(player: player)
+                        WaveformProgressScrubber(player: player)
                         transportControls
                         auxiliaryBar
                     }
@@ -63,6 +66,11 @@ public struct NowPlayingView: View {
         }
         .statusBarHidden(false)
         .nearbyShareOverlay()
+        .sheet(isPresented: $showMasterSheet) {
+            if let track = player.currentTrack {
+                AudioMasterSheet(track: track)
+            }
+        }
     }
 
     // MARK: - 顶部栏
@@ -98,23 +106,6 @@ public struct NowPlayingView: View {
             NearbyShareButton(track: track)
         }
         .padding(.top, Theme.Spacing.xs)
-    }
-
-    // MARK: - 封面舞台
-    private func artworkStage(_ track: Track) -> some View {
-        GeometryReader { proxy in
-            let side = min(proxy.size.width - 2 * Theme.Spacing.page, proxy.size.height - Theme.Spacing.lg)
-            ArtworkView(track: track, cornerRadius: Theme.Radius.artwork)
-                .matchedGeometryEffect(id: "artwork", in: artworkSpace)
-                .frame(width: side, height: side)
-                .scaleEffect(player.isPlaying ? 1 : 0.84)
-                .shadow(color: .black.opacity(player.isPlaying ? 0.45 : 0.25), radius: player.isPlaying ? 32 : 16, y: player.isPlaying ? 18 : 8)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .animation(Theme.Motion.bouncy, value: player.isPlaying)
-                .id(track.id)
-                .transition(.opacity)
-        }
-        .padding(.vertical, Theme.Spacing.md)
     }
 
     // MARK: - 歌词/队列模式的紧凑头部
@@ -173,8 +164,19 @@ public struct NowPlayingView: View {
                     .foregroundStyle(Theme.Palette.textSecondary)
                     .lineLimit(1)
 
-                QualityBadge(track: track, compact: false)
-                    .padding(.top, 2)
+                Button {
+                    HapticFeedback.light()
+                    showMasterSheet = true
+                } label: {
+                    HStack(spacing: 4) {
+                        QualityBadge(track: track, compact: false)
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundStyle(Theme.Palette.lossless.opacity(0.7))
+                    }
+                }
+                .buttonStyle(PressScaleStyle())
+                .padding(.top, 2)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -299,76 +301,5 @@ private struct TransportPressStyle: ButtonStyle {
             }
             .scaleEffect(configuration.isPressed ? 0.88 : 1)
             .animation(.spring(duration: 0.25), value: configuration.isPressed)
-    }
-}
-
-// MARK: - 进度条（单独视图，只有它订阅 currentTime 的高频刷新）
-private struct ProgressScrubber: View {
-    @Bindable var player: AudioPlayerService
-
-    @State private var dragProgress: Double?
-    @State private var lastTickStep = -1
-
-    private var progress: Double {
-        if let dragProgress { return dragProgress }
-        guard player.duration > 0 else { return 0 }
-        return min(max(player.currentTime / player.duration, 0), 1)
-    }
-
-    private var isDragging: Bool { dragProgress != nil }
-
-    var body: some View {
-        VStack(spacing: 6) {
-            GeometryReader { proxy in
-                let width = proxy.size.width
-                ZStack(alignment: .leading) {
-                    Capsule().fill(Theme.Palette.textPrimary.opacity(0.16))
-                    Capsule()
-                        .fill(Theme.Palette.textPrimary.opacity(isDragging ? 1 : 0.85))
-                        .frame(width: max(0, width * progress))
-                        .animation(isDragging ? nil : .linear(duration: 0.25), value: progress)
-                }
-                .frame(height: isDragging ? 12 : 6)
-                .frame(maxHeight: .infinity)
-                .contentShape(.rect)
-                .gesture(
-                    DragGesture(minimumDistance: 0)
-                        .onChanged { value in
-                            let p = min(max(value.location.x / width, 0), 1)
-                            withAnimation(.spring(duration: 0.2)) { dragProgress = p }
-                            // 每 5% 一个刻度触感
-                            let step = Int(p * 20)
-                            if step != lastTickStep {
-                                HapticFeedback.waveformTick()
-                                lastTickStep = step
-                            }
-                        }
-                        .onEnded { _ in
-                            if let dragProgress {
-                                player.seek(to: dragProgress * player.duration)
-                            }
-                            HapticFeedback.light()
-                            withAnimation(.spring(duration: 0.3)) { dragProgress = nil }
-                            lastTickStep = -1
-                        }
-                )
-            }
-            .frame(height: 24)
-
-            HStack {
-                Text((progress * player.duration).timecode)
-                Spacer()
-                Text("-" + max(0, player.duration - progress * player.duration).timecode)
-            }
-            .font(Theme.Font.timecode)
-            .foregroundStyle(isDragging ? Theme.Palette.textPrimary : Theme.Palette.textTertiary)
-        }
-        .accessibilityElement()
-        .accessibilityLabel("播放进度")
-        .accessibilityValue("\(player.currentTime.timecode) / \(player.duration.timecode)")
-        .accessibilityAdjustableAction { direction in
-            let delta: TimeInterval = direction == .increment ? 10 : -10
-            player.seek(to: player.currentTime + delta)
-        }
     }
 }

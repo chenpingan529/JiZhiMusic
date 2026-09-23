@@ -207,6 +207,18 @@ public final class AudioPlayerService {
         }
     }
 
+    public func insertNext(_ track: Track) {
+        if let current = currentTrack, let index = queue.firstIndex(of: current) {
+            queue.insert(track, at: index + 1)
+        } else {
+            queue.append(track)
+        }
+    }
+
+    public func appendToQueue(_ track: Track) {
+        queue.append(track)
+    }
+
     public func seek(to time: TimeInterval) {
         let clampedTime = max(0, min(time, duration))
         self.currentTime = clampedTime

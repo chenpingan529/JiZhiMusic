@@ -153,13 +153,22 @@ private struct ScrollingLyrics: View {
                     }
                 }
                 .padding(.horizontal, Theme.Spacing.page + 8)
-                .padding(.vertical, 120)
+                .padding(.vertical, 100)
             }
             .scrollIndicators(.hidden)
-            .mask(EdgeFade())
+            .overlay(alignment: .top) {
+                LinearGradient(colors: [Theme.Palette.canvas, Theme.Palette.canvas.opacity(0)], startPoint: .top, endPoint: .bottom)
+                    .frame(height: 50)
+                    .allowsHitTesting(false)
+            }
+            .overlay(alignment: .bottom) {
+                LinearGradient(colors: [Theme.Palette.canvas.opacity(0), Theme.Palette.canvas], startPoint: .top, endPoint: .bottom)
+                    .frame(height: 70)
+                    .allowsHitTesting(false)
+            }
             .onChange(of: moment.index, initial: true) { _, index in
                 guard let index else { return }
-                withAnimation(.spring(duration: 0.6, bounce: 0.15)) {
+                withAnimation(.spring(duration: 0.5, bounce: 0.1)) {
                     proxy.scrollTo(index, anchor: UnitPoint(x: 0.5, y: 0.35))
                 }
             }
@@ -197,19 +206,16 @@ private struct ScrollingLyrics: View {
                     highlight: Theme.Palette.accent,
                     dimmed: !isActive
                 ))
-                .padding(.top, 10) // 给跳起的字留空间
+                .padding(.top, 10)
 
         case .neon:
-            let glow = Theme.Palette.accent
             Text(line.text)
                 .font(.system(size: isActive ? 30 : 24, weight: .black, design: .rounded))
                 .multilineTextAlignment(.center)
-                .foregroundStyle(isActive ? Theme.Palette.textPrimary : Theme.Palette.textPrimary.opacity(0.22))
-                .shadow(color: glow.opacity(isActive ? 0.95 : 0), radius: isActive ? 2 + 6 * beat : 0)
-                .shadow(color: glow.opacity(isActive ? 0.7 : 0), radius: isActive ? 10 + 22 * beat : 0)
-                .scaleEffect(isActive ? 1 + 0.04 * beat : 1)
-                .blur(radius: isActive ? 0 : min(Double(distance) * 0.8, 3))
-                .animation(.spring(duration: 0.45), value: isActive)
+                .foregroundStyle(isActive ? Theme.Palette.textPrimary : Theme.Palette.textPrimary.opacity(0.3))
+                .shadow(color: isActive ? Theme.Palette.accent.opacity(0.85) : .clear, radius: isActive ? 12 : 0)
+                .scaleEffect(isActive ? 1.04 : 1.0)
+                .animation(Theme.Motion.smooth, value: isActive)
 
         default: // classic
             Text(line.text)

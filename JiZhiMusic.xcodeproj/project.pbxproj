@@ -19,6 +19,7 @@
 		47A8A2062D6DAC790C0BBD5C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882EC0CD8C2C1E8E907B9A0 /* Theme.swift */; };
 		47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88E2C4B234E0770CF42D968 /* Assets.xcassets */; };
 		4FD5F4FAB3507B23F51FED10 /* PeerShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00D7D939C6171C234D506B /* PeerShareService.swift */; };
+		6D91849A21469466D8DB7EEF /* WaveformProgressScrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADE550CD146F0B6C9E4AFC /* WaveformProgressScrubber.swift */; };
 		704DAC5649E1D4EFFA29551F /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F87F9C79890EA5E4F5342 /* ThemeStore.swift */; };
 		7B16B204824DA2E40E5A86C6 /* cover_midnight_rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */; };
 		88122E6AA2BE5A1B1E274FEA /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CF3E03EA8A137473FA9AA /* CommonViews.swift */; };
@@ -28,6 +29,7 @@
 		98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */; };
 		A556864182EAD6D201886A85 /* NearbyShareOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA3BD96FD1A1CF47B08BBD6 /* NearbyShareOverlay.swift */; };
 		A702613E258518B40652FBF3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EA511F992AA7EC0D6B315C /* Track.swift */; };
+		ABEB51AC190BC53BCE1FE13F /* VinylSleeveStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6422A370FC76372AABC8C2C2 /* VinylSleeveStage.swift */; };
 		ADA7F5398A6FB487F5B3A2EF /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9DDB0380F95DF371730B07 /* MiniPlayerView.swift */; };
 		AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */; };
 		B1728CA566D759DB2449E5DF /* MediaLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */; };
@@ -37,6 +39,7 @@
 		E47A0F2A457DFCFB9A2B956F /* cover_chinese_dj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49960207FEB038B9C432F7EF /* cover_chinese_dj.jpg */; };
 		E7DBECD0AA408190056B8FD9 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D956298B7A04E13B104E7B /* LibraryView.swift */; };
 		F130980139CEA215A116E5FA /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */; };
+		F49444AFE2C83D886EEB91E9 /* AudioMasterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8676E29511DE34D5C17BF991 /* AudioMasterSheet.swift */; };
 		F7492376ABC62FD200B40285 /* PeerShareModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC9637705E6F57A2140B2 /* PeerShareModelsTests.swift */; };
 		F761E48DA60D03EB8E1A2FF9 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C7C1324EA852911C77510 /* NowPlayingView.swift */; };
 		FD9650A0856A7B77C5D71A31 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7816E37233B7568B088AD /* Artwork.swift */; };
@@ -65,11 +68,13 @@
 		556EC444A3F70805D3ACCA85 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
 		5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiZhiMusicApp.swift; sourceTree = "<group>"; };
+		6422A370FC76372AABC8C2C2 /* VinylSleeveStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylSleeveStage.swift; sourceTree = "<group>"; };
 		6A71A8D04C489AC47F2478E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6E2204EF9EE7E385147000D3 /* NowPlayingUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUpdater.swift; sourceTree = "<group>"; };
 		6F3C7C1324EA852911C77510 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		6FED7FE547E027D6CDDA1909 /* MediaLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryManager.swift; sourceTree = "<group>"; };
 		82ED7922E3DFC655189F783E /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		8676E29511DE34D5C17BF991 /* AudioMasterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMasterSheet.swift; sourceTree = "<group>"; };
 		8DD4BBD99D2BFB642AC5842C /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		8E0235FF76E70CA83B42AE9E /* cover_clair_de_lune.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_clair_de_lune.jpg; sourceTree = "<group>"; };
 		99EA511F992AA7EC0D6B315C /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		C82461D21E78286760187DB6 /* PeerShareModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerShareModels.swift; sourceTree = "<group>"; };
 		CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayTemplateManager.swift; sourceTree = "<group>"; };
 		CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */ = {isa = PBXFileReference; path = demo_midnight_rain.m4a; sourceTree = "<group>"; };
+		D0ADE550CD146F0B6C9E4AFC /* WaveformProgressScrubber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformProgressScrubber.swift; sourceTree = "<group>"; };
 		DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_midnight_rain.jpg; sourceTree = "<group>"; };
 		E88E2C4B234E0770CF42D968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E932128D465230F37535A090 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
@@ -96,8 +102,11 @@
 		0E408C141A7921FC9F65963C /* NowPlaying */ = {
 			isa = PBXGroup;
 			children = (
+				8676E29511DE34D5C17BF991 /* AudioMasterSheet.swift */,
 				0FC8D95DF7C66778A095390B /* LyricsStyles.swift */,
 				6F3C7C1324EA852911C77510 /* NowPlayingView.swift */,
+				6422A370FC76372AABC8C2C2 /* VinylSleeveStage.swift */,
+				D0ADE550CD146F0B6C9E4AFC /* WaveformProgressScrubber.swift */,
 			);
 			path = NowPlaying;
 			sourceTree = "<group>";
@@ -406,6 +415,7 @@
 			files = (
 				DFE3CFCC3572AF92B31AEDEB /* Album.swift in Sources */,
 				FD9650A0856A7B77C5D71A31 /* Artwork.swift in Sources */,
+				F49444AFE2C83D886EEB91E9 /* AudioMasterSheet.swift in Sources */,
 				1B68B921DFEABAB8ECEAF961 /* AudioPlayerService.swift in Sources */,
 				F130980139CEA215A116E5FA /* CarPlaySceneDelegate.swift in Sources */,
 				AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */,
@@ -428,6 +438,8 @@
 				704DAC5649E1D4EFFA29551F /* ThemeStore.swift in Sources */,
 				A702613E258518B40652FBF3 /* Track.swift in Sources */,
 				98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */,
+				ABEB51AC190BC53BCE1FE13F /* VinylSleeveStage.swift in Sources */,
+				6D91849A21469466D8DB7EEF /* WaveformProgressScrubber.swift in Sources */,
 				331C0B51FB71F4B98CEEB8C6 /* WebDAVClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
