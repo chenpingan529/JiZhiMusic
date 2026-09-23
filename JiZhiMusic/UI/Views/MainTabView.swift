@@ -9,6 +9,7 @@ public struct MainTabView: View {
     @State private var player = AudioPlayerService.shared
     @State private var library = MediaLibraryManager.shared
     @State private var cloudClient = WebDAVClient.shared
+    @State private var shareService = PeerShareService.shared
 
     @State private var selectedTab: AppTab
     @State private var isNowPlayingPresented: Bool
@@ -47,6 +48,9 @@ public struct MainTabView: View {
             NowPlayingView(player: player)
                 .navigationTransition(.zoom(sourceID: "now-playing", in: playerTransition))
         }
+        .nearbyShareOverlay()
         .onChange(of: selectedTab) { HapticFeedback.selection() }
+        // 隔空收到歌曲并开始播放后，自动打开播放页
+        .onChange(of: shareService.receivedPlaybackCount) { isNowPlayingPresented = true }
     }
 }

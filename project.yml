@@ -29,6 +29,9 @@ targets:
         CFBundleLocalizations: [zh-Hans]
         UILaunchScreen:
           UIColorName: LaunchBackground
+        NSLocalNetworkUsageDescription: 极致音乐需要访问本地网络，以便与附近的 iPhone 隔空传歌。
+        NSBonjourServices: [_jizhi-share._tcp, _jizhi-share._udp]
+        NSNearbyInteractionUsageDescription: 极致音乐需要测量与附近 iPhone 的距离，两台手机靠近时即可分享正在播放的歌曲。
     entitlements:
       path: JiZhiMusic/App/JiZhiMusic.entitlements
     settings:
@@ -38,3 +41,18 @@ targets:
         CODE_SIGN_ENTITLEMENTS: JiZhiMusic/App/JiZhiMusic.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    scheme:
+      testTargets:
+        - JiZhiMusicTests
+  JiZhiMusicTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: JiZhiMusicTests
+    dependencies:
+      - target: JiZhiMusic
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.chenpingan.JiZhiMusicTests
+        PRODUCT_NAME: JiZhiMusicTests
+        GENERATE_INFOPLIST_FILE: true

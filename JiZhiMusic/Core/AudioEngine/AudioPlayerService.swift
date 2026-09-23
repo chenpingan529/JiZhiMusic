@@ -245,9 +245,9 @@ public final class AudioPlayerService {
     // MARK: - 拟真声学计时器（无本地音频文件时仍有极佳交互）
     private func startSyntheticPlayback() {
         syntheticTimer?.invalidate()
-        syntheticTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+        syntheticTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
             guard let self, self.isPlaying else { return }
-            self.currentTime += 0.1
+            self.currentTime += 0.25
             if self.currentTime >= self.duration {
                 if self.repeatMode == .one {
                     self.currentTime = 0
@@ -259,12 +259,19 @@ public final class AudioPlayerService {
     }
 
     private func setupPeriodicTimeObserver() {
-        let interval = CMTime(seconds: 0.05, preferredTimescale: 600)
+        // 降低到 0.25 秒（4Hz）更新，大幅降低主线程与 SwiftUI 频繁无效重绘，配合弹簧动画依然丝滑
+        let interval = CMTime(seconds: 0.25, preferredTimescale: 600)
         timeObserverToken = avPlayer?.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
             guard let self, self.isPlaying else { return }
-            self.currentTime = time.seconds
+            let sec = time.seconds
+            if abs(sec - self.currentTime) >= 0.2 {
+                self.currentTime = sec
+            }
             if let currentItem = self.avPlayer?.currentItem {
-                self.duration = currentItem.duration.seconds.isFinite ? currentItem.duration.seconds : self.duration
+                let d = currentItem.duration.seconds
+                if d.isFinite && abs(d - self.duration) > 0.5 {
+                    self.duration = d
+                }
             }
         }
     }
@@ -272,15 +279,16 @@ public final class AudioPlayerService {
     // MARK: - 频谱动效驱动器
     private func startVisualizer() {
         visualizerTimer?.invalidate()
-        visualizerTimer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { [weak self] _ in
+        // 降至 0.2 秒周期并精简频段，杜绝无意义的高频主线程派发
+        visualizerTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] _ in
             guard let self, self.isPlaying else {
                 self?.decayVisualizer()
                 return
             }
-            // 产生平滑有机的自然频谱波动
-            self.visualizerLevels = (0..<32).map { index in
-                let base = sin(Double(index) * 0.3 + Date().timeIntervalSince1970 * 4) * 0.35 + 0.5
-                let noise = Double.random(in: -0.15...0.15)
+            let t = Date().timeIntervalSince1970 * 3
+            self.visualizerLevels = (0..<16).map { index in
+                let base = sin(Double(index) * 0.4 + t) * 0.35 + 0.5
+                let noise = Double.random(in: -0.1...0.1)
                 return CGFloat(max(0.08, min(1.0, base + noise)))
             }
         }
@@ -291,7 +299,7 @@ public final class AudioPlayerService {
     }
 
     private func decayVisualizer() {
-        withAnimation(.easeOut(duration: 0.3)) {
+        withAnimation(.easeOut(duration: 0.25)) {
             self.visualizerLevels = self.visualizerLevels.map { max(0.05, $0 * 0.7) }
         }
     }

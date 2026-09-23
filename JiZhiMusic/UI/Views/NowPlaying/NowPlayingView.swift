@@ -62,6 +62,7 @@ public struct NowPlayingView: View {
             }
         }
         .statusBarHidden(false)
+        .nearbyShareOverlay()
     }
 
     // MARK: - 顶部栏
@@ -93,8 +94,8 @@ public struct NowPlayingView: View {
 
             Spacer()
 
-            // 与左侧按钮对称的占位，保持标题居中
-            Color.clear.frame(width: 40, height: 40)
+            // 隔空传歌：与左侧按钮同尺寸，保持标题居中
+            NearbyShareButton(track: track)
         }
         .padding(.top, Theme.Spacing.xs)
     }
@@ -325,6 +326,7 @@ private struct ProgressScrubber: View {
                     Capsule()
                         .fill(Theme.Palette.textPrimary.opacity(isDragging ? 1 : 0.85))
                         .frame(width: max(0, width * progress))
+                        .animation(isDragging ? nil : .linear(duration: 0.25), value: progress)
                 }
                 .frame(height: isDragging ? 12 : 6)
                 .frame(maxHeight: .infinity)

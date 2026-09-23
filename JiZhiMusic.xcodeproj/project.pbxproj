@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00235BD470B58BD9CE47E6DF /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4BBD99D2BFB642AC5842C /* SampleData.swift */; };
+		07EC8877E89C91EAD313EF33 /* PeerShareModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82461D21E78286760187DB6 /* PeerShareModels.swift */; };
 		16612D6F575980AF56B21460 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556EC444A3F70805D3ACCA85 /* MainTabView.swift */; };
 		1B68B921DFEABAB8ECEAF961 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E932128D465230F37535A090 /* AudioPlayerService.swift */; };
 		2D245E7AA42DC323BF8B9B22 /* LyricsStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8D95DF7C66778A095390B /* LyricsStyles.swift */; };
@@ -17,6 +18,7 @@
 		3C6D42EFF3A7302648D89B2C /* demo_chinese_dj.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A435B2648AAC6761FED33795 /* demo_chinese_dj.m4a */; };
 		47A8A2062D6DAC790C0BBD5C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882EC0CD8C2C1E8E907B9A0 /* Theme.swift */; };
 		47CDDA9D3ECA88123C4DA4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88E2C4B234E0770CF42D968 /* Assets.xcassets */; };
+		4FD5F4FAB3507B23F51FED10 /* PeerShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00D7D939C6171C234D506B /* PeerShareService.swift */; };
 		704DAC5649E1D4EFFA29551F /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F87F9C79890EA5E4F5342 /* ThemeStore.swift */; };
 		7B16B204824DA2E40E5A86C6 /* cover_midnight_rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */; };
 		88122E6AA2BE5A1B1E274FEA /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CF3E03EA8A137473FA9AA /* CommonViews.swift */; };
@@ -24,6 +26,7 @@
 		93218758342A6240CC1041BA /* demo_midnight_rain.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */; };
 		972FF543FCDFF335858E7FE7 /* JiZhiMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7522642D84BD445F7040E5 /* JiZhiMusicApp.swift */; };
 		98D6CFF761B074AB598EF661 /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */; };
+		A556864182EAD6D201886A85 /* NearbyShareOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA3BD96FD1A1CF47B08BBD6 /* NearbyShareOverlay.swift */; };
 		A702613E258518B40652FBF3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EA511F992AA7EC0D6B315C /* Track.swift */; };
 		ADA7F5398A6FB487F5B3A2EF /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9DDB0380F95DF371730B07 /* MiniPlayerView.swift */; };
 		AF054273CE2B5B925B2DF644 /* CarPlayTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */; };
@@ -34,15 +37,27 @@
 		E47A0F2A457DFCFB9A2B956F /* cover_chinese_dj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49960207FEB038B9C432F7EF /* cover_chinese_dj.jpg */; };
 		E7DBECD0AA408190056B8FD9 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D956298B7A04E13B104E7B /* LibraryView.swift */; };
 		F130980139CEA215A116E5FA /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8F41DDC1E6406D391BEBE0 /* CarPlaySceneDelegate.swift */; };
+		F7492376ABC62FD200B40285 /* PeerShareModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFADC9637705E6F57A2140B2 /* PeerShareModelsTests.swift */; };
 		F761E48DA60D03EB8E1A2FF9 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C7C1324EA852911C77510 /* NowPlayingView.swift */; };
 		FD9650A0856A7B77C5D71A31 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7816E37233B7568B088AD /* Artwork.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF03B296D1DF4E22DECC3A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 001B14CCB8A7B7C2F1CA2D9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6510ACB80E38C064305D19D4;
+			remoteInfo = JiZhiMusic;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0FC8D95DF7C66778A095390B /* LyricsStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsStyles.swift; sourceTree = "<group>"; };
 		2882EC0CD8C2C1E8E907B9A0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		434EB59D0FD5C09F1E139C56 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		49960207FEB038B9C432F7EF /* cover_chinese_dj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_chinese_dj.jpg; sourceTree = "<group>"; };
+		4AA3BD96FD1A1CF47B08BBD6 /* NearbyShareOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyShareOverlay.swift; sourceTree = "<group>"; };
 		4B9DDB0380F95DF371730B07 /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
 		4F4FE43C4ADA2747B780B3E0 /* WebDAVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDAVClient.swift; sourceTree = "<group>"; };
 		4FFAABF1CDBF0311FBADB9A7 /* TrackRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRowView.swift; sourceTree = "<group>"; };
@@ -62,8 +77,12 @@
 		A16CF3E03EA8A137473FA9AA /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
 		A435B2648AAC6761FED33795 /* demo_chinese_dj.m4a */ = {isa = PBXFileReference; path = demo_chinese_dj.m4a; sourceTree = "<group>"; };
 		AA5F87F9C79890EA5E4F5342 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
+		AD00D7D939C6171C234D506B /* PeerShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerShareService.swift; sourceTree = "<group>"; };
 		AEE896554B611205122F2968 /* JiZhiMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JiZhiMusic.entitlements; sourceTree = "<group>"; };
+		B5402607AE9CC509FE162CB6 /* JiZhiMusicTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = JiZhiMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D956298B7A04E13B104E7B /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		BFADC9637705E6F57A2140B2 /* PeerShareModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerShareModelsTests.swift; sourceTree = "<group>"; };
+		C82461D21E78286760187DB6 /* PeerShareModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerShareModels.swift; sourceTree = "<group>"; };
 		CA0E4B187265AC3BB66C47C9 /* CarPlayTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayTemplateManager.swift; sourceTree = "<group>"; };
 		CA6D255EE940B649506F215C /* demo_midnight_rain.m4a */ = {isa = PBXFileReference; path = demo_midnight_rain.m4a; sourceTree = "<group>"; };
 		DCB9183DEC46E14CCDE01EE4 /* cover_midnight_rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_midnight_rain.jpg; sourceTree = "<group>"; };
@@ -83,10 +102,36 @@
 			path = NowPlaying;
 			sourceTree = "<group>";
 		};
+		12846705CE3878FE5396EF4F /* JiZhiMusicTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFADC9637705E6F57A2140B2 /* PeerShareModelsTests.swift */,
+			);
+			path = JiZhiMusicTests;
+			sourceTree = "<group>";
+		};
+		3200BC8760BF1144E4C518B5 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				4AA3BD96FD1A1CF47B08BBD6 /* NearbyShareOverlay.swift */,
+			);
+			path = Sharing;
+			sourceTree = "<group>";
+		};
+		35DF703D5325D3505B86C94F /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				C82461D21E78286760187DB6 /* PeerShareModels.swift */,
+				AD00D7D939C6171C234D506B /* PeerShareService.swift */,
+			);
+			path = Sharing;
+			sourceTree = "<group>";
+		};
 		3FDE868E4F8E07543D31E616 = {
 			isa = PBXGroup;
 			children = (
 				A0F6F704049AEE6EBEBC397B /* JiZhiMusic */,
+				12846705CE3878FE5396EF4F /* JiZhiMusicTests */,
 				6A1FA386C1E0F14B34B23C38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +154,7 @@
 				D885AB6597106E8CFDFE3554 /* Library */,
 				0E408C141A7921FC9F65963C /* NowPlaying */,
 				772E113071EDC3AD3B97E48E /* Settings */,
+				3200BC8760BF1144E4C518B5 /* Sharing */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				51414CA456167F793B4B1BB1 /* JiZhiMusic.app */,
+				B5402607AE9CC509FE162CB6 /* JiZhiMusicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +241,7 @@
 			children = (
 				E5C47381BF8FEDA2F0D96B58 /* AudioEngine */,
 				F0B6FEDC22A784EC23F8FBF6 /* Models */,
+				35DF703D5325D3505B86C94F /* Sharing */,
 				CD908101BA12CC57E8311F6B /* Storage */,
 			);
 			path = Core;
@@ -277,6 +325,24 @@
 			productReference = 51414CA456167F793B4B1BB1 /* JiZhiMusic.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BF69C56F0D2180C63262E8CE /* JiZhiMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F45DE926BD4B4EFFF1FEA5F /* Build configuration list for PBXNativeTarget "JiZhiMusicTests" */;
+			buildPhases = (
+				393F88EE659236A6D4ACB514 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C19A610CA100F1E365309316 /* PBXTargetDependency */,
+			);
+			name = JiZhiMusicTests;
+			packageProductDependencies = (
+			);
+			productName = JiZhiMusicTests;
+			productReference = B5402607AE9CC509FE162CB6 /* JiZhiMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -287,6 +353,10 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					6510ACB80E38C064305D19D4 = {
+						DevelopmentTeam = PLH99FA6GF;
+						ProvisioningStyle = Automatic;
+					};
+					BF69C56F0D2180C63262E8CE = {
 						DevelopmentTeam = PLH99FA6GF;
 						ProvisioningStyle = Automatic;
 					};
@@ -307,6 +377,7 @@
 			projectRoot = "";
 			targets = (
 				6510ACB80E38C064305D19D4 /* JiZhiMusic */,
+				BF69C56F0D2180C63262E8CE /* JiZhiMusicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,8 +417,11 @@
 				16612D6F575980AF56B21460 /* MainTabView.swift in Sources */,
 				B1728CA566D759DB2449E5DF /* MediaLibraryManager.swift in Sources */,
 				ADA7F5398A6FB487F5B3A2EF /* MiniPlayerView.swift in Sources */,
+				A556864182EAD6D201886A85 /* NearbyShareOverlay.swift in Sources */,
 				91FB2A5411BD4BE9567D8B3C /* NowPlayingUpdater.swift in Sources */,
 				F761E48DA60D03EB8E1A2FF9 /* NowPlayingView.swift in Sources */,
+				07EC8877E89C91EAD313EF33 /* PeerShareModels.swift in Sources */,
+				4FD5F4FAB3507B23F51FED10 /* PeerShareService.swift in Sources */,
 				00235BD470B58BD9CE47E6DF /* SampleData.swift in Sources */,
 				DA0A4C8C82322FDAA6189725 /* SettingsView.swift in Sources */,
 				47A8A2062D6DAC790C0BBD5C /* Theme.swift in Sources */,
@@ -358,7 +432,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		393F88EE659236A6D4ACB514 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7492376ABC62FD200B40285 /* PeerShareModelsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C19A610CA100F1E365309316 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6510ACB80E38C064305D19D4 /* JiZhiMusic */;
+			targetProxy = FF03B296D1DF4E22DECC3A41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1EC1353F725CBBD16AC76224 /* Release */ = {
@@ -376,6 +466,24 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenpingan.JiZhiMusic;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		55E751430A9A2FBC2C9E5002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenpingan.JiZhiMusicTests;
+				PRODUCT_NAME = JiZhiMusicTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JiZhiMusic.app/JiZhiMusic";
 			};
 			name = Release;
 		};
@@ -524,6 +632,24 @@
 			};
 			name = Release;
 		};
+		E3B4FEE60FD895DE90787414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenpingan.JiZhiMusicTests;
+				PRODUCT_NAME = JiZhiMusicTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JiZhiMusic.app/JiZhiMusic";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -532,6 +658,15 @@
 			buildConfigurations = (
 				59E9E5C7B8E709E22160C3D3 /* Debug */,
 				BB29E03E423F94413801BA89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2F45DE926BD4B4EFFF1FEA5F /* Build configuration list for PBXNativeTarget "JiZhiMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3B4FEE60FD895DE90787414 /* Debug */,
+				55E751430A9A2FBC2C9E5002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

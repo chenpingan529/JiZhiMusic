@@ -147,6 +147,20 @@ public final class MediaLibraryManager {
         }
     }
 
+    /// 登记一个已在沙盒内的音频文件（如隔空传歌收到的歌曲）。同一文件已在库中则直接返回已有条目。
+    /// - Parameter customize: 新建条目时对解析结果做覆盖（例如使用分享方提供的歌名与歌词）
+    public func registerReceivedFile(at url: URL, customize: (Track) -> Track = { $0 }) async -> Track? {
+        let path = url.resolvingSymlinksInPath().path
+        if let existing = localTracks.first(where: { $0.fileURL?.resolvingSymlinksInPath().path == path }) {
+            return existing
+        }
+        guard let parsed = await parseAudioFile(at: url) else { return nil }
+        let track = customize(parsed)
+        localTracks.insert(track, at: 0)
+        savePersistedTracks()
+        return track
+    }
+
     // MARK: - 持久化存储
     private var cacheFileURL: URL {
         documentsURL.appendingPathComponent("cached_local_tracks.json")

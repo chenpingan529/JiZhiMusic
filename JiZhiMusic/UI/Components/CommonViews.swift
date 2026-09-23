@@ -66,10 +66,12 @@ public struct SectionHeader<Trailing: View>: View {
     }
 }
 
-/// 正在播放指示器（三根跳动的柱）；暂停时静止为短柱
+/// 正在播放指示器（三根跳动的柱）；暂停时静止为短柱（采用纯 CoreAnimation 硬件驱动，零 CPU 消耗）
 public struct PlayingIndicator: View {
     public var isPlaying: Bool
     public var color: Color
+
+    @State private var animating = false
 
     public init(isPlaying: Bool, color: Color = Theme.Palette.accent) {
         self.isPlaying = isPlaying
@@ -77,19 +79,32 @@ public struct PlayingIndicator: View {
     }
 
     public var body: some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 20, paused: !isPlaying)) { context in
-            let t = context.date.timeIntervalSinceReferenceDate
-            HStack(alignment: .bottom, spacing: 2) {
-                ForEach(0..<3, id: \.self) { i in
-                    let phase = sin(t * (5.5 + Double(i) * 1.7) + Double(i) * 1.3)
-                    Capsule()
-                        .fill(color)
-                        .frame(width: 3, height: isPlaying ? 5 + 9 * (phase + 1) / 2 : 4)
-                }
-            }
-            .frame(width: 15, height: 14, alignment: .bottom)
+        HStack(alignment: .bottom, spacing: 2) {
+            bar(duration: 0.45, minHeight: 4, maxHeight: 13, delay: 0.0)
+            bar(duration: 0.38, minHeight: 6, maxHeight: 14, delay: 0.15)
+            bar(duration: 0.52, minHeight: 3, maxHeight: 11, delay: 0.08)
+        }
+        .frame(width: 15, height: 14, alignment: .bottom)
+        .onAppear {
+            animating = isPlaying
+        }
+        .onChange(of: isPlaying) { _, playing in
+            animating = playing
         }
         .accessibilityLabel(isPlaying ? "正在播放" : "已暂停")
+    }
+
+    @ViewBuilder
+    private func bar(duration: Double, minHeight: CGFloat, maxHeight: CGFloat, delay: Double) -> some View {
+        Capsule()
+            .fill(color)
+            .frame(width: 3, height: animating ? maxHeight : minHeight)
+            .animation(
+                animating
+                    ? .easeInOut(duration: duration).repeatForever(autoreverses: true).delay(delay)
+                    : .easeOut(duration: 0.2),
+                value: animating
+            )
     }
 }
 

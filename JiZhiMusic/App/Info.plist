@@ -22,6 +22,15 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_jizhi-share._tcp</string>
+		<string>_jizhi-share._udp</string>
+	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>极致音乐需要访问本地网络，以便与附近的 iPhone 隔空传歌。</string>
+	<key>NSNearbyInteractionUsageDescription</key>
+	<string>极致音乐需要测量与附近 iPhone 的距离，两台手机靠近时即可分享正在播放的歌曲。</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

@@ -10,6 +10,11 @@ enum ArtworkCache {
         c.countLimit = 120
         return c
     }()
+    private static let ambientCache: NSCache<NSUUID, UIImage> = {
+        let c = NSCache<NSUUID, UIImage>()
+        c.countLimit = 60
+        return c
+    }()
     private static var misses = Set<UUID>()
 
     static func image(for track: Track) -> UIImage? {
@@ -22,6 +27,21 @@ enum ArtworkCache {
         }
         cache.setObject(img, forKey: key)
         return img
+    }
+
+    /// 为氛围背景生成的超轻量级缩略图（80x80），仅在切歌时生成一次并缓存，杜绝大图每帧实时重模糊
+    static func ambientThumbnail(for track: Track) -> UIImage? {
+        let key = track.id as NSUUID
+        if let hit = ambientCache.object(forKey: key) { return hit }
+        guard let original = image(for: track) else { return nil }
+        
+        let size = CGSize(width: 80, height: 80)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let thumb = renderer.image { _ in
+            original.draw(in: CGRect(origin: .zero, size: size))
+        }
+        ambientCache.setObject(thumb, forKey: key)
+        return thumb
     }
 }
 
@@ -112,19 +132,19 @@ public struct AmbientBackground: View {
 
             if let track {
                 Color.clear.overlay {
-                    if let img = ArtworkCache.image(for: track) {
+                    if let img = ArtworkCache.ambientThumbnail(for: track) {
                         Image(uiImage: img)
                             .resizable()
                             .scaledToFill()
-                            .blur(radius: 80, opaque: true)
-                            .saturation(1.4)
+                            .blur(radius: 20, opaque: true)
+                            .saturation(1.3)
                     } else {
                         MeshGradient(
                             width: 2, height: 2,
                             points: [[0, 0], [1, 0], [0, 1], [1, 1]],
                             colors: [track.primaryColor, track.secondaryColor, track.secondaryColor, track.primaryColor]
                         )
-                        .blur(radius: 40)
+                        .blur(radius: 20)
                     }
                 }
                 .clipped()

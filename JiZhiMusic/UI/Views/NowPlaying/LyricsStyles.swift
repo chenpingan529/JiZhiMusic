@@ -78,8 +78,21 @@ struct LyricsPanel: View {
         if lyrics.isEmpty {
             ContentUnavailableView("暂无歌词", systemImage: "quote.bubble", description: Text("这首歌没有歌词"))
                 .foregroundStyle(Theme.Palette.textSecondary)
+        } else if style == .classic || style == .focus {
+            // 经典与居中聚焦模式：无需高频插值，直接使用播放器时间，极大释放 CPU 与主线程性能
+            let moment = LyricMoment(lyrics: lyrics, time: player.currentTime, trackDuration: player.duration)
+            Group {
+                if style == .classic {
+                    ScrollingLyrics(lyrics: lyrics, moment: moment, style: style, beat: 0) { seek(to: $0) }
+                } else {
+                    StageLyrics(lyrics: lyrics, moment: moment, style: style, time: player.currentTime)
+                }
+            }
+            .id(style)
+            .transition(.opacity)
         } else {
-            TimelineView(.animation(paused: !player.isPlaying)) { context in
+            // 卡拉OK/粒子特效：限制在 30fps 刷新，兼顾丝滑与续航低发热
+            TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !player.isPlaying)) { context in
                 let time = smoothTime(at: context.date)
                 let moment = LyricMoment(lyrics: lyrics, time: time, trackDuration: player.duration)
                 Group {
@@ -92,7 +105,7 @@ struct LyricsPanel: View {
             }
             .onChange(of: player.currentTime, initial: true) { anchorDate = .now }
             .id(style)
-            .transition(.blurReplace)
+            .transition(.opacity)
         }
     }
 
@@ -201,8 +214,7 @@ private struct ScrollingLyrics: View {
         default: // classic
             Text(line.text)
                 .font(.system(size: 28, weight: .bold))
-                .foregroundStyle(Theme.Palette.textPrimary.opacity(isActive ? 1 : 0.28))
-                .blur(radius: isActive ? 0 : min(Double(distance) * 0.7, 2.5))
+                .foregroundStyle(Theme.Palette.textPrimary.opacity(isActive ? 1 : 0.32))
                 .scaleEffect(isActive ? 1 : 0.96, anchor: .leading)
                 .animation(Theme.Motion.smooth, value: isActive)
         }

@@ -138,11 +138,6 @@ public struct LibraryView: View {
                     ) {
                         player.playTrack(track, inQueue: visibleTracks)
                     }
-                    .scrollTransition(.animated(Theme.Motion.snappy)) { content, phase in
-                        content
-                            .opacity(phase.isIdentity ? 1 : 0.4)
-                            .scaleEffect(phase.isIdentity ? 1 : 0.97)
-                    }
                 }
             }
         }

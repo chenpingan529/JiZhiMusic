@@ -21,6 +21,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 struct JiZhiMusicApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var themeStore = ThemeStore.shared
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
@@ -28,6 +29,14 @@ struct JiZhiMusicApp: App {
                 .preferredColorScheme(themeStore.colors.scheme)
                 .tint(themeStore.colors.accent)
                 .animation(Theme.Motion.smooth, value: themeStore.current)
+        }
+        // 隔空传歌只在前台运行：进入后台即断开，回到前台重新发现附近设备
+        .onChange(of: scenePhase, initial: true) { _, phase in
+            switch phase {
+            case .active: PeerShareService.shared.start()
+            case .background: PeerShareService.shared.stop()
+            default: break
+            }
         }
     }
 }
